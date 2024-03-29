@@ -1,0 +1,70 @@
+/* ==========================================================================
+   9.0 Magnific Popup styles
+   ========================================================================== */
+
+button.mfp-arrow{
+	transition: opacity 0.3s ease;
+	opacity: 1;
+
+	&:hover{
+		opacity: 0.6;
+	}
+
+	&:before,
+	&:after{
+		border: 0;
+		color: #fff;
+		font-size: 45px;
+		font-family: "Font Awesome 5 Free";
+		font-weight: 900;
+	}
+}
+
+button.mfp-arrow-left{
+	&:after{
+		content: "\f104";
+	}
+}
+
+button.mfp-arrow-right{
+	&:after{
+		content: "\f105";
+	}
+}
+
+button.mfp-close{
+	text-indent: -1000px;
+	overflow: hidden;
+	text-align: left !important;
+	transition: opacity 0.3s ease;
+	opacity: 1;
+
+	&:hover{
+		opacity: 0.6;
+	}
+
+	&:after{
+		font-family: "Font Awesome 5 Free";
+		content: "\f00d";
+		position: absolute;
+		right: 4px;
+		bottom: 0;
+		text-indent: 0;
+		font-size: 17px;
+		font-weight: 900;
+	}
+}
+
+.mfp-bottom-bar{
+	.mfp-title,
+	.mfp-counter{
+		font-family: $heading-font;
+		text-transform: uppercase;
+		font-size: 15px;
+		font-weight: 500;
+		color: #fff;
+	}
+}
+
+
+

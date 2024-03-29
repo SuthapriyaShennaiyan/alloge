@@ -1,0 +1,153 @@
+/* ==========================================================================
+   Room Gallery list shortcode styles
+   ========================================================================== */
+
+.qodef-room-gallery-list {
+	@include qodefRelativeLayout();
+	
+	.qodef-room-gallery-list-item {
+		
+		&:nth-child(odd) {
+			
+			.qodef-e-inner {
+				flex-direction: row-reverse;
+			}
+			
+			.swiper-button-prev {
+				left: 0 !important;
+			}
+			
+			.swiper-button-next {
+				left: 48px !important;
+			}
+			
+			.qodef-e-content {
+				text-align: right;
+			}
+		}
+	}
+	
+	.qodef-e-inner {
+		position: relative;
+		display: flex;
+		align-items: stretch;
+	}
+	
+	.qodef-e-media {
+		width: 60%;
+		background-color: #f6f3ea;
+		
+		> * {
+			height: 100%;
+		}
+		
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	
+	.qodef-e-media-image {
+		
+		a {
+			display: block;
+			height: 100%;
+		}
+	}
+	
+	.qodef-e-media-slider {
+		
+		.qodef-swiper-container {
+			height: 100%;
+		}
+		
+		.swiper-wrapper {
+			align-items: stretch;
+			/*transition-timing-function: cubic-bezier(0.46, 0.03, 0.52, 0.96);*/
+			transition-timing-function: cubic-bezier(0.35, 0.33, 0.31, 0.94);
+		}
+		
+		.swiper-slide {
+			height: auto;
+			overflow: hidden;
+		}
+		
+		img {
+			will-change: transform;
+			/*transition-timing-function: ease-in-out;*/
+		}
+	}
+	
+	.swiper-button-prev,
+	.swiper-button-next {
+		top: auto;
+		bottom: 0;
+		display: flex;
+		width: 48px !important;
+		height: 50px !important;
+		color: $heading-color;
+		background-color: $additional-background-color;
+		transform: none;
+		transition: $color-transition;
+		
+		svg {
+			width: 6px;
+			stroke-width: 3;
+		}
+		
+		&:hover {
+			color: rgba($heading-color, .5);
+		}
+	}
+	
+	.swiper-button-prev {
+		left: auto !important;
+		right: 48px !important;
+		
+		svg {
+			margin-left: 17px;
+		}
+	}
+	
+	.swiper-button-next {
+		left: auto !important;
+		right: 0 !important;
+		
+		svg {
+			margin-right: 17px;
+		}
+	}
+	
+	.qodef-e-content {
+		width: 40%;
+		display: inline-flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 144px 70px 150px;
+		background-color: #f6f3ea;
+	}
+	
+	.qodef-e-price {
+		color: $main-color;
+		line-height: 1.1em;
+	}
+	
+	.qodef-e-title {
+		margin: 0;
+	}
+	
+	.qodef-e-amenity-items {
+		margin-top: 30px;
+		
+		.qodef-ei {
+			margin: 2px 0;
+			color: $text-color;
+		}
+	}
+	
+	.qodef-e-button {
+		margin-top: 41px;
+	}
+}

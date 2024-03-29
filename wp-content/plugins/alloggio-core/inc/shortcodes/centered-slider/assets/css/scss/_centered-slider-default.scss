@@ -1,0 +1,108 @@
+/* ==========================================================================
+   Centered Slider shortcode style - begin
+   ========================================================================== */
+
+.qodef-centered-slider {
+	&.qodef---has-hover{
+		.qodef-m-image-holder {
+			overflow: hidden;
+			clip-path: inset(0 0 0 0); //fix of img hover flickering issue
+			
+			.qodef-m-image {
+				@include qodefMoveImageInitial(.29s, 1.2);
+			}
+			
+			&:hover {
+				.qodef-m-image {
+					@include qodefMoveImageHover(.35s,1.2);
+				}
+			}
+		}
+	}
+	
+	.qodef-m-item {
+		margin: 0 20px;
+		width: 39.254%;
+	}
+	
+	.qodef-m-title {
+		margin: 36px 0 0;
+	}
+	
+	.qodef-m-subtitle {
+		display: block;
+		margin: 0;
+		color: $main-color;
+	}
+	
+	.qodef-m-title,
+	.qodef-m-subtitle {
+		opacity: 0;
+		transform: translateY(15px);
+		transition: opacity .2s ease-out 0s, transform .2s ease-out .5s;
+		text-align: center;
+	}
+	
+	.swiper-slide-active,
+	.swiper-slide-duplicate-active{
+		
+		.qodef-m-title,
+		.qodef-m-subtitle {
+			transition: opacity .45s ease-out, transform .45s ease-out;
+			opacity: 1;
+			transform: translateY(0);
+		}
+		
+		.qodef-m-title {
+			transition-delay: .3s;
+		}
+		
+		.qodef-m-subtitle {
+			transition-delay: .36s;
+		}
+	}
+	
+	&:not(.qodef--has-title) {
+		
+		.qodef-m-item {
+			box-shadow: 0px 0px 21px 0px rgba(130, 45, 21, 0.1);
+		}
+	}
+	
+	&.qodef--has-title {
+		
+		&:after {
+			content: '';
+			position: absolute;
+			display: block;
+			width: 68.314%;
+			height: 100%;
+			top: 25.3%;
+			left: 15.843%;
+			background-color: #f6f3ea;
+			z-index: 0;
+		}
+		
+		.swiper-wrapper {
+			padding-bottom: 44px;
+		}
+		
+		.swiper-navigation {
+			position: absolute;
+			display: block;
+			width: 68.314%;
+			height: 51px;
+			bottom: 48px;
+			left: 15.843%;
+			margin: 0 auto;
+		}
+		
+		.qodef-m-item {
+			margin: 0 2.06%;
+		}
+	}
+}
+
+/* ==========================================================================
+   Centered Slider shortcode style - end
+   ========================================================================== */

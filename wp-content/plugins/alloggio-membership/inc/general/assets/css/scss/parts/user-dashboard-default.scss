@@ -1,0 +1,130 @@
+/* ==========================================================================
+   User Dashboard global styles
+   ========================================================================== */
+
+#qodef-membership-user-dashboard {
+	position: relative;
+	display: flex;
+	align-items: stretch;
+	width: 100%;
+	
+	.qodef-m-navigation {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		width: 280px;
+		padding: 15px 25px;
+		margin-right: 40px;
+		flex-shrink: 0;
+		background-color: $additional-background-color;
+	}
+	
+	.qodef-m-navigation-items {
+		list-style: none;
+		margin: 0;
+	}
+	
+	.qodef-m-navigation-item {
+		position: relative;
+		display: block;
+		margin: 0 0 23px;
+		
+		.qodef-e-link {
+			position: relative;
+			display: flex;
+			align-items: center;
+			@include qodefCustomTextStyle(null);
+		}
+		
+		.qodef-e-icon {
+			position: relative;
+			top: 2px;
+			flex-shrink: 0;
+			margin-right: 25px;
+			width: 25px;
+			text-align: center;
+			
+			svg {
+				max-width: 100%;
+				height: auto;
+				stroke: currentColor;
+				fill: none;
+				stroke-miterlimit: 10;
+				stroke-width: 2;
+			}
+		}
+		
+		&:first-child {
+			margin-top: 14px;
+		}
+		
+		&.qodef--active {
+			
+			.qodef-e-link {
+				color: $main-color;
+			}
+		}
+	}
+	
+	.qodef-m-content {
+		@include qodefRelativeLayout();
+		
+		.qodef-m-image {
+			margin-bottom: 29px;
+			
+			img {
+				display: block;
+			}
+		}
+		
+		.qodef-m-text {
+			position: relative;
+			display: flex;
+			align-items: flex-start;
+			margin: 10px 0;
+			
+			> * {
+				margin: 0;
+			}
+		}
+		
+		.qodef-m-text-label {
+			flex-shrink: 0;
+			margin-right: 10px;
+		}
+	}
+	
+	.qodef-options-front-end {
+		
+		.qodef-field-section {
+			margin-bottom: 26px;
+		}
+		
+		.qodef-field-title {
+			margin: 0 0 8px;
+			@include qodefCustomTextStyle();
+		}
+		
+		.qodef-field {
+			margin: 0;
+		}
+		
+		.qodef-front-end-submit {
+			margin-top: 4px;
+			
+			&:before {
+				content: '';
+				display: block;
+				@include qodefButtonBackground();
+				z-index: -1;
+			}
+			
+			&:hover {
+				
+				&:before {
+					@include qodefButtonBackgroundHover();
+				}
+			}
+		}
+	}
+}

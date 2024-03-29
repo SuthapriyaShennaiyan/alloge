@@ -1,0 +1,111 @@
+/* ==========================================================================
+   Amenity list shortcode styles
+   ========================================================================== */
+
+.qodef-amenity-list {
+	@include qodefRelativeLayout();
+	text-align: center;
+	
+	.qodef-e-link {
+		display: block;
+		color: $heading-color;
+	}
+	
+	.qodef-e-icon {
+		position: relative;
+		display: block;
+		max-width: 80px;
+		margin: 0 auto;
+		flex-shrink: 0;
+		
+		svg {
+			position: relative;
+			display: block;
+			max-width: inherit;
+			margin: 0 auto;
+			transform: translateY(0px);
+			transition: .4s cubic-bezier(0.24, 0.13, 0.2, 1.11);
+		}
+		
+		&:before {
+			content: '';
+			position: absolute;
+			bottom: 15px;
+			left: -15px;
+			width: 100%;
+			height: 0;
+			padding-bottom: 100%;
+			background-color: $additional-background-color;
+			border-radius: 100%;
+			opacity: 0;
+			transition: .5s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+		}
+	}
+	
+	.qodef-ei-svg-icon {
+		stroke: currentColor;
+		stroke-linecap: round;
+		stroke-width: 0.6;
+		fill: none;
+	}
+	
+	.qodef-e-title {
+		display: block;
+		margin: 10px -0.25em 0 0;
+		@include qodefCustomTextStyle(null);
+	}
+	
+	&.qodef-layout--columns {
+		
+		> .qodef-grid-inner {
+			display: flex;
+			align-items: flex-end;
+			flex-wrap: wrap;
+		}
+	}
+	
+	&.qodef-skin--light {
+		
+		.qodef-e-link {
+			color: #fff;
+		}
+		
+		.qodef-e-icon {
+			color: #b8b8b8;
+			
+			svg {
+				
+				* {
+					fill: none;
+					stroke: currentColor;
+				}
+			}
+			
+			&:before {
+				background-color: #302b26;
+			}
+		}
+	}
+	
+	&.qodef--has-animation {
+		
+		.qodef-e {
+			display: block;
+			color: $heading-color;
+			
+			&:hover {
+				
+				.qodef-e-icon {
+					
+					&:before {
+						opacity: 1;
+					}
+					
+					svg {
+						transform: translateY(-7px);
+					}
+				}
+			}
+		}
+	}
+}

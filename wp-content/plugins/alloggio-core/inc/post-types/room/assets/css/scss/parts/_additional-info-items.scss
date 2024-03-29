@@ -1,0 +1,22 @@
+/* ==========================================================================
+   Room Single part styles
+   ========================================================================== */
+
+.qodef-e-info-items {
+	@include qodefRelativeLayout();
+	margin-top: 40px;
+	padding-top: 37px;
+	border-top: 1px solid $additional-border-color;
+	
+    .qodef-e-info-item {
+	    margin-bottom: 54px;
+	    
+	    .qodef-ei-title {
+		    margin: 0 0 22px;
+	    }
+	    
+	    &:last-child {
+		    margin-bottom: 0;
+	    }
+    }
+}

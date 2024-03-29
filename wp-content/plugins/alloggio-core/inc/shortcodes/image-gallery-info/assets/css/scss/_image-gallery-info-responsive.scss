@@ -1,0 +1,34 @@
+/* ==========================================================================
+   Image Gallery Info shortcode responsive styles
+   ========================================================================== */
+
+.qodef-image-gallery-info {
+	
+	@include qodefScreenSize1440 {
+		
+		.qodef-m-inner {
+			margin: 0 -23px;
+			
+			.qodef-m-gallery,
+			.qodef-m-items {
+				padding: 0 23px;
+			}
+		}
+	}
+	
+	@include qodefScreenSize1024 {
+		
+		.qodef-m-inner {
+			flex-direction: column;
+			
+			.qodef-m-gallery,
+			.qodef-m-items {
+				width: 100%;
+			}
+		}
+		
+		.qodef-m-items {
+			margin-top: 60px;
+		}
+	}
+}

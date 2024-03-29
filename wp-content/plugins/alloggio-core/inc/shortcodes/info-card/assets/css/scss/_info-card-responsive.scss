@@ -1,0 +1,53 @@
+/* ==========================================================================
+   Info Card shortcode responsive styles
+   ========================================================================== */
+
+.qodef-info-card {
+	
+	@include qodefScreenSize1440 {
+		
+		.qodef-m-content {
+			padding: 61px 70px 80px;
+		}
+		
+		.qodef-m-content-image {
+			left: 48px;
+		}
+		
+		&.qodef-image--right {
+			
+			.qodef-m-content-image {
+				right: 48px;
+			}
+		}
+	}
+	
+	@include qodefScreenSize1024 {
+		flex-wrap: wrap;
+		
+		.qodef-m-image {
+			flex-shrink: inherit;
+			margin: -13% auto;
+		}
+		
+		.qodef-m-content-image {
+			left: auto;
+			right: 48px;
+		}
+		
+		&.qodef-image--right {
+			flex-direction: inherit;
+		}
+	}
+	
+	@include qodefScreenSize680 {
+		
+		.qodef-m-content {
+			padding: 51px 30px 70px;
+		}
+		
+		.qodef-m-content-image {
+			display: none;
+		}
+	}
+}

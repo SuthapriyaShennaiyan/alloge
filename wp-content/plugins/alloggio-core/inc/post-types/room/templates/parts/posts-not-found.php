@@ -1,0 +1,1 @@
+<p class="qodef-m-posts-not-found qodef-grid-item"><?php esc_html_e( 'Unfortunately, no rooms are available for provided parameters. Please try to select other dates.', 'alloggio-core' ); ?></p>

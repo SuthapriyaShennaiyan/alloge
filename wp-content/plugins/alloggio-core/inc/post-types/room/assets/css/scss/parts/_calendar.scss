@@ -1,0 +1,247 @@
+/* ==========================================================================
+   Datepicker global styles
+   ========================================================================== */
+
+%datepicker-global-style {
+    
+    .datepick {
+        width: auto !important;
+        min-width: 250px;
+        padding: 25px;
+        font-family: $additional-text-font;
+        font-size: 14px;
+        line-height: 2em;
+        font-weight: 500;
+        color: $heading-color;
+        background-color: #fbfaf5;
+        border: 1px solid $border-color;
+        border-radius: 0;
+        
+        @include qodefScreenSize680 {
+            min-width: 200px;
+        }
+    }
+    
+    .datepick-month-row {
+        position: relative;
+        display: flex;
+        margin: 0 -12px;
+        
+        > * {
+            width: 100%;
+            padding: 0 12px;
+        }
+    
+        .datepick-cmd {
+            position: absolute;
+            top: -2px;
+            display: inline-block;
+            vertical-align: top;
+            float: none;
+            height: auto;
+            width: auto;
+            padding: 6px 8px;
+            color: $heading-color;
+            background-color: inherit;
+            
+            &:hover {
+                color: $main-color;
+            }
+            
+            &.datepick-cmd-prev {
+                left: 15px;
+            }
+    
+            &.datepick-cmd-next {
+                right: 15px;
+            }
+    
+            &.datepick-disabled {
+                color: $text-color;
+                cursor: not-allowed;
+            }
+        }
+    
+        .qodef-e-calendar-icon {
+            display: block;
+            width: 7px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+    }
+    
+    .datepick-month-header {
+        height: auto;
+        margin-bottom: 17px;
+        font-size: 12px;
+        line-height: 22px;
+        font-weight: 500;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        text-align: center;
+        color: $heading-color;
+        background-color: inherit;
+    }
+    
+    .datepick-month {
+        border: 0;
+    
+        thead {
+            border-bottom: 0;
+        }
+        
+        th {
+            padding: 0 0 2px;
+            font-weight: inherit;
+            letter-spacing: 0.01em;
+            color: $main-color;
+            border: 0;
+            background-color: inherit;
+        }
+        
+        tr {
+            padding: 0;
+            border: 0;
+            
+            td {
+                
+                > * {
+                    display: block;
+                    padding: 3px 9.45px 4px;
+                    border-style: solid;
+                    border-color: $border-color;
+    
+                    @include qodefScreenSize480 {
+                        padding: 2px 7px 3px;
+                    }
+                }
+    
+                span:not(.datepick-other-month),
+                a {
+                    border-width: 0 1px 1px 0;
+                }
+    
+                span {
+        
+                    &.datepick-other-month {
+                        display: none;
+                    }
+                }
+    
+                &:first-child {
+        
+                    span:not(.datepick-other-month),
+                    a {
+                        border-left-width: 1px;
+                    }
+                }
+            }
+            
+            &:first-child {
+    
+                td {
+                    position: relative;
+                    
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 1px;
+                        background-color: $border-color;
+                        z-index: 1;
+                    }
+    
+                    span:not(.datepick-other-month),
+                    a {
+                        border-top-width: 1px;
+                        border-bottom-width: 0;
+                        
+                        &:before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: -1px;
+                            width: 1px;
+                            height: 100%;
+                            background-color: $border-color;
+                        }
+                    }
+                }
+            }
+        }
+    
+        td {
+            padding: 0;
+            font-weight: inherit;
+            background: none;
+            border: 0;
+    
+            $disabled-color: rgba(#504e45, .4);
+            
+            span {
+                color: $disabled-color;
+    
+                &.datepick-today,
+                &.datepick-weekend,
+                &.datepick-other-month {
+                    background-color: inherit;
+                }
+            }
+            
+            a {
+                color: $heading-color;
+                background-color: #fff;
+                transition: $color-transition, $background-color-transition;
+            }
+    
+            .datepick-today {
+                color: $main-color;
+                background-color: #fff;
+            }
+            
+            .datepick-selected,
+            .datepick-highlight {
+                color: #fff !important;
+                background-color: $main-color !important;
+            }
+    
+            .datepick-last-room {
+                color: $heading-color;
+                background: #f8f6c1;
+        
+                &:hover {
+                    color: #fff;
+                    background-color: $main-color;
+                }
+            }
+    
+            .datepick-disabled {
+                color: $disabled-color !important;
+                background: linear-gradient(to top left, rgba($disabled-color, 0) 0%, rgba($disabled-color, 0) calc(50% - 0.8px), $disabled-color 50%, rgba($disabled-color, 0) calc(50% + 0.8px), rgba($disabled-color, 0) 100%) !important;
+                cursor: not-allowed !important;
+                pointer-events: none !important;
+            }
+        }
+    }
+}
+
+.datepick-popup {
+    width: auto !important;
+    z-index: 9999999 !important;
+    
+    @extend %datepicker-global-style;
+}
+
+.qodef-datepick-calendar {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    
+    @extend %datepicker-global-style;
+}

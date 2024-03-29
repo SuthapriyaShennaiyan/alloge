@@ -1,0 +1,130 @@
+/* ==========================================================================
+   Room Single part styles
+   ========================================================================== */
+
+.qodef-e-availability {
+    @include qodefRelativeLayout();
+    margin-top: 56px;
+    padding-top: 37px;
+    border-top: 1px solid $additional-border-color;
+}
+
+.qodef-e-availability-title {
+    margin: 0 0 13px;
+}
+
+.qodef-e-calendar-wrapper {
+    display: inline-block;
+    vertical-align: top;
+    background-color: #fbfaf5;
+    border: 1px solid $border-color;
+}
+
+.qodef-e-availability-calendar {
+    
+    .datepick {
+        padding: 34px 40px 30px;
+        background-color: transparent;
+        border: 0;
+    }
+    
+    .datepick-month {
+    
+        tr {
+        
+            td {
+                $disabled-color: rgba(#504e45, .4);
+                
+                a {
+                    position: relative;
+                    pointer-events: none;
+                }
+    
+                .datepick-selected,
+                .datepick-highlight {
+    
+                    &:not(.datepick-disabled) {
+                        color: inherit !important;
+                        background-color: #fff !important;
+                    }
+                }
+    
+                .datepick-today {
+                    color: $main-color;
+                    background-color: #fff;
+                }
+    
+                .datepick-last-room {
+                    color: $heading-color;
+                    background: #f8f6c1;
+                }
+    
+                .datepick-disabled {
+                    color: $disabled-color;
+                    background: linear-gradient(to top left, rgba($disabled-color, 0) 0%, rgba($disabled-color, 0) calc(50% - 0.8px), $disabled-color 50%, rgba($disabled-color, 0) calc(50% + 0.8px), rgba($disabled-color, 0) 100%);
+                }
+            }
+        }
+    }
+}
+
+.qodef-e-availability-legend {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+    padding: 0 40px 30px;
+    
+    .qodef-ei-legend-item {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        padding: 0 10px;
+        margin: 10px 0;
+        
+        &.qodef--selected {
+    
+            .qodef-ei-box {
+                background-color: $main-color;
+            }
+        }
+        
+        &.qodef--available {
+    
+            .qodef-ei-box {
+                background-color: #fff;
+                border: 1px solid $border-color;
+            }
+        }
+    
+        &.qodef--no-available {
+            $disabled-color: rgba(#504e45, .4);
+        
+            .qodef-ei-box {
+                background: linear-gradient(to top left, rgba($disabled-color, 0) 0%, rgba($disabled-color, 0) calc(50% - 0.8px), $disabled-color 50%, rgba($disabled-color, 0) calc(50% + 0.8px), rgba($disabled-color, 0) 100%) !important;
+                border: 1px solid $border-color;
+            }
+        }
+        
+        &.qodef--last-room {
+    
+            .qodef-ei-box {
+                background: #f8f6c1;
+            }
+        }
+    }
+    
+    .qodef-ei-box {
+        width: 31px;
+        height: 31px;
+        margin-right: 10px;
+    }
+    
+    .qodef-ei-label {
+        font-family: $additional-text-font;
+        font-size: 12px;
+        color: $heading-color;
+        letter-spacing: 0.03em;
+    }
+}

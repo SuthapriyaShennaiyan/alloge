@@ -1,0 +1,57 @@
+/* ==========================================================================
+   Room booking admin styles - begin
+   ========================================================================== */
+
+@media (min-width: 769px) {
+	
+	.qodef-room-booking .wp-list-table #order_id,
+	.qodef-room-booking .wp-list-table #amount,
+	.qodef-room-booking .wp-list-table #price {
+		width: 90px;
+	}
+	
+	.qodef-room-booking .wp-list-table #order_date {
+		width: 160px;
+	}
+	
+	.qodef-room-booking .wp-list-table #payment_status {
+		width: 140px;
+	}
+}
+
+.qodef-room-booking .wp-list-table .qodef-m-payment-status {
+	display: inline-block;
+	vertical-align: top;
+	padding: 0 1em;
+	line-height: 2.5em;
+	color: #777;
+	background: #e5e5e5;
+	border-radius: 4px;
+	border-bottom: 1px solid rgba(0, 0, 0, .05);
+	white-space: nowrap;
+}
+
+.qodef-room-booking .wp-list-table .qodef-m-payment-status.qodef--completed {
+	color: #2e4453;
+	background: #c8d7e1;
+}
+
+.qodef-room-booking .wp-list-table .qodef-m-payment-status.qodef--on-hold {
+	color: #94660c;
+	background: #f8dda7;
+}
+
+.qodef-room-booking .wp-list-table .qodef-m-payment-status.qodef--failed {
+	color: #761919;
+	background: #eba3a3;
+}
+
+.qodef-room-booking .wp-list-table .qodef-m-payment-status.qodef--processing {
+	color: #5b841b;
+	background: #c6e1c6;
+}
+
+.qodef-room-booking .wp-list-table .qodef-m-payment-status.qodef--trash {
+	color: #761919;
+	background: #eba3a3;
+}

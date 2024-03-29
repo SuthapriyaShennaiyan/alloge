@@ -1,0 +1,30 @@
+/* ==========================================================================
+   Masonry gallery shortcode variation styles
+   ========================================================================== */
+
+.qodef-masonry-gallery-list {
+	
+	.qodef-layout--textual {
+		
+		.qodef-e-inner {
+			
+			.touch & {
+				cursor: pointer;
+			}
+			
+			&:hover {
+				
+				.qodef-e-content {
+					opacity: 1;
+				}
+			}
+		}
+		
+		.qodef-e-content {
+			padding: 30px 40px;
+			background-color: rgba($heading-color, .3);
+			opacity: 0;
+			transition: $opacity-transition;
+		}
+	}
+}

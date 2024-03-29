@@ -1,0 +1,85 @@
+/* ==========================================================================
+   Reservation Form styles - start
+   ========================================================================== */
+
+.qodef-reservation-form {
+	
+	.qodef-m-inner {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+	
+	.qodef-m-field {
+		flex-basis: 19%;
+		position: relative;
+	}
+	
+	.qodef-m-field-label {
+		flex-shrink: 0;
+		flex-basis: auto;
+	}
+	
+	.qodef-m-icon-arrow {
+		position: absolute;
+		right: 15px;
+		top: 50%;
+		transform: translateY(-50%);
+		display: flex;
+		font-size: 23px;
+	}
+	
+	.qodef-m-icon {
+		color: $main-color;
+		position: absolute;
+		left: 15px;
+		display: flex;
+		font-size: 14px;
+		top: 18px;
+		z-index: 1;
+	}
+	
+	.qodef-m-icon-date {
+		font-size: 17px;
+		top: 16px;
+	}
+	
+	.qodef-m-label {
+		text-align: center;
+		font-size: 38px;
+		line-height: 46px;
+		color: $heading-color;
+	}
+	
+	.select2-container--default,
+	.qodef-m-date,
+	.qodef-m-date:focus {
+		margin: 0;
+		width: 100% !important;
+		text-align: center;
+		font-size: 17px;
+		border: 1px solid $border-color;
+	}
+	
+	.select2-selection--single {
+		color: inherit !important;
+		font-size: inherit !important;
+		border: inherit !important;
+	}
+	
+	button {
+		width: 100%;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+	
+	.qodef-m-copyright {
+		font-size: 14px;
+		font-family: $text-font;
+		margin: 5px 0;
+	}
+}
+
+/* ==========================================================================
+  Reservation Form styles - end
+   ========================================================================== */

@@ -1,0 +1,460 @@
+/* ==========================================================================
+   Blog styles
+   ========================================================================== */
+
+.qodef-blog {
+    @include qodefRelativeLayout();
+
+    .qodef-blog-item {
+        @include qodefRelativeLayout();
+        margin: 0 0 62px;
+
+        .qodef-e-inner,
+        .qodef-e-media,
+        .qodef-e-content {
+            @include qodefRelativeLayout();
+        }
+
+        .qodef-e-media-image {
+            @include qodefRelativeLayout();
+
+            a, img {
+                display: block;
+                width: 100%;
+            }
+
+            &.qodef--background {
+                width: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+
+                img {
+                    visibility: hidden;
+                }
+            }
+        }
+
+        .qodef-e-media {
+            margin-bottom: 24px;
+
+            iframe {
+                display: block;
+                height: 100%;
+            }
+        }
+
+        .qodef-e-title {
+            margin: 0;
+        }
+
+        .qodef-e-excerpt {
+            margin: 14px 0 0;
+        }
+
+        .qodef-e-read-more {
+            margin: 15px 0 0;
+        }
+
+        .qodef-e-info {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 100%;
+
+            @media only screen and (min-width: $screen-size-681) {
+
+                .qodef-e-info-left,
+                .qodef-e-info-right {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+	                flex-wrap: wrap;
+                }
+
+                .qodef-e-info-right {
+                    justify-content: flex-end;
+                }
+            }
+
+            &.qodef-info--top {
+                margin-bottom: 2px;
+                color: $main-color;
+	            line-height: 1em;
+    
+                a {
+        
+                    &:hover {
+                        color: $heading-color;
+                    }
+                }
+            }
+
+            &.qodef-info--bottom {
+                display: inline-flex;
+	            margin-top: 25px;
+            }
+        }
+    
+        .qodef-e-info-item {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            padding: 0 11px 0 0;
+            color: currentColor;
+        
+            &:after {
+                content: ',';
+                position: absolute;
+                top: 0;
+                right: 7px;
+            }
+        
+            &.qodef-e-info-date {
+            
+                &:after {
+                    display: none;
+                }
+            }
+        
+            a {
+                color: inherit;
+            
+                &:hover {
+                    color: $main-color;
+                }
+            }
+        
+            &:last-child {
+                padding-right: 0;
+            
+                &:after {
+                    content: '';
+                }
+            }
+        }
+
+        .qodef-e-info-tags {
+
+            a {
+                position: relative;
+                display: inline-block;
+                vertical-align: top;
+                margin-right: 6px;
+
+                &:after {
+                    content: ',';
+                    position: relative;
+                    top: 0;
+                    left: 0;
+	                color: $text-color;
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                    
+                    &:after {
+                        content: '';
+                    }
+                }
+            }
+        }
+
+        .qodef-e-post-link {
+            @include qodefAbsoluteLayout();
+        }
+
+        &.sticky {
+
+            .qodef-e-title a {
+                position: relative;
+                text-decoration: underline;
+
+                &:after {
+                    content: '*';
+                    position: absolute;
+                    top: 0;
+                    right: -0.5em;
+                    font-size: 1.5em;
+                }
+            }
+        }
+
+        &.format-audio {
+
+            .qodef-e-media-image {
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .qodef-e-media-audio {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                
+                
+            }
+    
+            .qodef-e-media-audio {
+        
+                .mejs-container, .mejs-embed, .mejs-embed body, .mejs-container .mejs-controls {
+                    background: none;
+                }
+        
+                .mejs-container {
+                    background-color: $heading-color;
+                }
+        
+                .mejs-container,
+                .mejs-container .mejs-controls {
+                    height: 38px !important;
+                }
+        
+                .mejs-container .mejs-controls {
+                    padding: 0 10px 0 4px;
+                    box-sizing: border-box;
+                }
+        
+                .mejs-container .mejs-controls > .mejs-playpause-button {
+                    width: 39px;
+                }
+        
+                .mejs-container .mejs-controls > .mejs-volume-button {
+                    width: 30px;
+                }
+        
+                .mejs-container .mejs-controls > .mejs-playpause-button,
+                .mejs-container .mejs-controls > .mejs-volume-button {
+                    height: 38px;
+            
+                    button {
+                        position: relative;
+                        height: 100%;
+                        background: none;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        margin: 0;
+                        border: 0;
+                        outline: none;
+                    }
+            
+                    &.mejs-play button,
+                    &.mejs-replay button {
+                        width: 39px;
+                        background-image: url('../../inc/blog/assets/img/audio/play.png');
+                    }
+            
+                    &.mejs-pause button {
+                        width: 39px;
+                        background-image: url('../../inc/blog/assets/img/audio/pause.png');
+                    }
+            
+                    &.mejs-stop button {
+                        width: 39px;
+                        background-image: url('../../inc/blog/assets/img/audio/stop.png');
+                    }
+            
+                    &.mejs-mute button {
+                        width: 30px;
+                        background-image: url('../../inc/blog/assets/img/audio/sound.png');
+                    }
+            
+                    &.mejs-unmute button {
+                        width: 30px;
+                        background-image: url('../../inc/blog/assets/img/audio/mute.png');
+                    }
+                }
+        
+                .mejs-container .mejs-controls > .mejs-time {
+                    height: 100%;
+                    padding: 0;
+                    font-family: $text-font;
+                    font-size: 15px;
+                    font-weight: 300;
+                    color: #fff;
+                    line-height: 41px;
+            
+                    * {
+                        font-family: inherit;
+                    }
+                }
+        
+                .mejs-container .mejs-controls > .mejs-time-rail {
+                    height: 100%;
+                    padding: 0;
+                    font-family: inherit;
+            
+                    .mejs-time-total {
+                        height: 2px;
+                        margin: 18px 0;
+                        background: none;
+                        background-color: #606060;
+                
+                        .mejs-time-current {
+                            height: 2px;
+                            background-color: #fff;
+                        }
+                
+                        .mejs-time-buffering,
+                        .mejs-time-hovered {
+                            height: 2px;
+                            z-index: 9999;
+                        }
+                
+                        .mejs-time-hovered {
+                            background: hsla(0, 0, 0, 0.5);
+                        }
+                
+                        .mejs-time-float {
+                            top: -16px;
+                            border: 0;
+                            color: #fff;
+                        }
+                
+                        .mejs-time-handle-content {
+                            display: none;
+                        }
+                
+                        .mejs-time-float-corner {
+                            top: 11px;
+                        }
+                
+                        .mejs-time-loaded,
+                        .mejs-time-float {
+                            background: none;
+                        }
+                    }
+                }
+        
+                .mejs-container .mejs-controls > a.mejs-horizontal-volume-slider {
+                    height: 38px;
+            
+                    .mejs-horizontal-volume-total,
+                    .mejs-horizontal-volume-current {
+                        height: 2px;
+                        background: none;
+                    }
+            
+                    .mejs-horizontal-volume-total {
+                        top: 18px;
+                        background-color: #606060;
+                    }
+            
+                    .mejs-horizontal-volume-current {
+                        background-color: #fff;
+                    }
+                }
+            }
+        }
+
+        &.format-link {
+	        margin-bottom: 70px;
+	
+	        .qodef-e-link {
+		        @include qodefRelativeLayout();
+		        padding: 56px 30px 64px 149px;
+		        background-color: $additional-background-color;
+	        }
+	
+	        .qodef-e-mark {
+		        position: absolute;
+		        top: 0;
+		        left: 40px;
+                height: 100%;
+                width: 75px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #9F9790;
+        
+                svg {
+                    display: block;
+                    width: 100%;
+                    fill: none;
+                    stroke: currentColor;
+                    stroke-miterlimit: 10;
+                }
+	        }
+
+            .qodef-e-link-text {
+                position: relative;
+                margin: 0;
+	            color: $main-color;
+            }
+
+            .qodef-e-link-url {
+                @include qodefAbsoluteLayout();
+                z-index: 1;
+            }
+        }
+
+        &.format-quote {
+            margin-bottom: 70px;
+
+            .qodef-e-quote {
+                @include qodefRelativeLayout();
+                padding: 63px 30px 69px 149px;
+                color: $main-color;
+                background-color: $additional-background-color;
+            }
+    
+            .qodef-e-mark {
+                position: absolute;
+                top: 0;
+                left: 40px;
+                height: 100%;
+                width: 74px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #9F9790;
+        
+                svg {
+                    display: block;
+                    width: 100%;
+                    fill: none;
+                    stroke: currentColor;
+                    stroke-miterlimit: 10;
+                }
+            }
+            
+            .qodef-e-quote-text {
+                position: relative;
+                margin: 0;
+                color: currentColor;
+            }
+
+            .qodef-e-quote-author {
+                margin: 29px 0 0;
+	            color: currentColor;
+            }
+
+            .qodef-e-quote-url {
+                @include qodefAbsoluteLayout();
+                z-index: 1;
+            }
+        }
+    }
+    
+    &.qodef--single {
+    
+        .qodef-blog-item {
+            margin-bottom: 14px;
+        }
+    }
+
+    &.qodef-items--fixed {
+
+        article {
+
+            .qodef-e-media,
+            .qodef-e-media-image {
+                height: 100%;
+            }
+        }
+    }
+}

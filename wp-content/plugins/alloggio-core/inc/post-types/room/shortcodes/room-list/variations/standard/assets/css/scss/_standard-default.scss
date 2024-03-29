@@ -1,0 +1,58 @@
+/* ==========================================================================
+   Room list shortcode variation styles
+   ========================================================================== */
+
+.qodef-room-list {
+	
+	&.qodef-layout--standard {
+		
+		&.qodef-col-num--1 {
+			
+			.qodef-room-list-item {
+				margin-bottom: 80px;
+				
+				&:last-child {
+					margin-bottom: 55px;
+				}
+			}
+		}
+		
+		.qodef-e-media-image,
+		.qodef-e-media-slider {
+			margin-bottom: 40px;
+		}
+		
+		.qodef-e-content {
+			position: relative;
+			display: flex;
+			align-items: stretch;
+			margin: 0 -30px;
+			
+			> * {
+				padding: 0 30px;
+			}
+		}
+		
+		.qodef-e-content-text {
+			width: 67%;
+			border-right: 1px solid $border-color;
+		}
+		
+		.qodef-e-content-info {
+			width: 33%;
+		}
+		
+		.qodef-e-excerpt {
+			margin-top: 14px;
+		}
+		
+		.qodef-e-button {
+			margin-top: 29px;
+		}
+		
+		.qodef-e-info-items {
+			margin-bottom: 12px;
+			color: $heading-color;
+		}
+	}
+}

@@ -1,0 +1,69 @@
+/* ==========================================================================
+   Top area style - begin
+   ========================================================================== */
+$left-right-spacing: 12px;
+
+#qodef-top-area {
+    position: relative;
+    height: 40px;
+    padding: $full-width-side-padding;
+    background-color: $additional-background-color;
+    z-index: 101; /* Header has Z-index 100, top header has greater value because of dropdown in header top (wpml) */
+    
+    .qodef-top-area-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .qodef-widget-holder {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        
+        // IE11 issues with flexbox and search form item
+        &.qodef--left {
+            margin-right: auto;
+        }
+    
+        &.qodef--right {
+            margin-left: auto;
+        }
+        
+        .widget {
+            margin: 0 $left-right-spacing;
+            
+            &:first-child {
+                margin-left: 0;
+            }
+            
+            &:last-child {
+                margin-right: 0;
+            }
+            
+            &.widget_alloggio_core_separator {
+                margin: 0;
+            }
+        }
+    }
+    
+    .widget {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 1;
+    
+        .textwidget > *,
+        .widget p {
+            margin: 0;
+        }
+    }
+    
+    div[id^="monster-widget-placeholder"],
+    div[id^="woo-monster-widget-placeholder"] {
+        display: none;
+    }
+}
+
+/* ==========================================================================
+   Top area style - end
+   ========================================================================== */

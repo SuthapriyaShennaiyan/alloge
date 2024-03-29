@@ -1,0 +1,66 @@
+/* ==========================================================================
+   Banner shortcode styles
+   ========================================================================== */
+
+.qodef-banner {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	
+	.qodef-m-image {
+		@include qodefRelativeLayout();
+		overflow: hidden;
+		
+		img {
+			display: block;
+			transform: translateX(-4px) translateZ(0) scale(1.05);
+			transition: .35s cubic-bezier(.4,.12,.4,.85);
+		}
+		
+		&:hover {
+			img {
+				transform: translateX(4px) translateZ(0) scale(1.05);
+			}
+		}
+	}
+	
+	.qodef-m-content {
+		@include qodefAbsoluteLayout();
+		display: flex;
+		align-items: center;
+	}
+	
+	.qodef-m-title {
+		margin: 0;
+		
+		@include qodefScreenSize680 {
+			
+			br {
+				display: none;
+			}
+		}
+	}
+	
+	.qodef-m-text {
+		margin: 10px 0 0;
+	}
+	
+	.qodef-m-button {
+		margin: 13px 0 0;
+		
+		a {
+			position: relative;
+			z-index: 2;
+		}
+		
+		.qodef-m-text {
+			margin: 0;
+		}
+	}
+	
+	.qodef-m-banner-link {
+		@include qodefAbsoluteLayout();
+		display: block;
+		z-index: 1;
+	}
+}

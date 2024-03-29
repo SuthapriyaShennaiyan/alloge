@@ -1,0 +1,1 @@
+<h4 class="qodef-m-posts-not-found qodef-grid-item"><?php esc_html_e( 'No items in the cart.', 'alloggio-core' ); ?></h4>

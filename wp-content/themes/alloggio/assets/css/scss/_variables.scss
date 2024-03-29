@@ -1,0 +1,66 @@
+/* ==========================================================================
+   Typography variables
+   ========================================================================== */
+$text-font: 'Josefin Sans', sans-serif;
+$text-color: #4d4d4d;
+$text-font-size: 17px;
+$text-line-height: 27px;
+$text-line-height-em: 1.588235294117647em; // 25px/13px
+$text-font-weight: 300;
+
+$additional-text-font: 'Raleway', sans-serif;
+
+$heading-font: 'Cormorant', serif;
+$heading-color: #000;
+$main-color: #b56953;
+$second-color: #3c5c37;
+$light-skin-hover-color:#e4ceb9;
+
+$transition-timing: .25s ease-out;
+$custom-transition-timing: cubic-bezier(.25,.04,0,.93);
+$color-transition: color $transition-timing;
+$background-color-transition: background-color $transition-timing;
+$border-color-transition: border-color $transition-timing;
+$opacity-transition: opacity $transition-timing;
+
+$sliding-area-transition-time: .6s;
+$sliding-area-transition-timing: $sliding-area-transition-time cubic-bezier(.77, 0, .175, 1);
+$sliding-area-transition: all $sliding-area-transition-timing;
+
+/* ==========================================================================
+   Box variables
+   ========================================================================== */
+$page-content-padding: 100px 0 100px;
+$full-width-side-padding: 0 40px;
+$full-width-side-padding-large: 0 70px;
+$background-color: #fff;
+$additional-background-color: #faf9f5;
+$border-color: rgba(#000, .18);
+$light-border-color: #eaeaea;
+$additional-border-color: rgba(#bd8c7e, .22);
+$border-radius: 4px;
+$box-shadow: 3px 3px 16px 2px rgba(#000, 0.04);
+
+/* ==========================================================================
+   Devices screen size variables
+   ========================================================================== */
+$screen-size-1681: 1681px;
+$screen-size-1680: 1680px;
+$screen-size-1601: 1601px;
+$screen-size-1600: 1600px;
+$screen-size-1441: 1441px;
+$screen-size-1440: 1440px;
+$screen-size-1367: 1367px;
+$screen-size-1366: 1366px;
+$screen-size-1281: 1281px;
+$screen-size-1280: 1280px;
+$screen-size-1201: 1201px;
+$screen-size-1200: 1200px;
+$screen-size-1025: 1025px;
+$screen-size-1024: 1024px;
+$screen-size-769: 769px;
+$screen-size-768: 768px;
+$screen-size-681: 681px;
+$screen-size-680: 680px;
+$screen-size-481: 481px;
+$screen-size-480: 480px;

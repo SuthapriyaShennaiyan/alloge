@@ -1,0 +1,68 @@
+/* ==========================================================================
+   Filter styles
+   ========================================================================== */
+
+.qodef-filter--on {
+	
+	.qodef-hidden-filter-items {
+		position: absolute !important; // important is set because this holder needs to be invisible
+		display: none !important;
+		height: 0 !important;
+		line-height: 1 !important;
+	}
+	
+	.qodef-grid-inner {
+		opacity: 1;
+		transition: opacity .5s ease;
+	}
+	
+	&.qodef--filter-loading {
+		
+		.qodef-grid-inner {
+			opacity: 0;
+			transition: opacity .2s ease;
+		}
+		
+		.qodef-loading-spinner {
+			bottom: calc(50% - 16px) !important; // important is set to prevent larger selectors
+		}
+	}
+}
+
+.qodef-m-filter {
+	@include qodefRelativeLayout();
+	margin: 0 0 40px;
+	
+	.qodef-m-filter-items {
+		position: relative;
+		display: flex;
+		align-items: center;
+	}
+	
+	.qodef-m-filter-item {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		margin: 0 27px;
+		padding: 0 2px;
+		transition: color 0.3s ease, background-color 0.3s ease;
+		font-family: $additional-text-font;
+		font-size: 13px;
+		font-weight: 500;
+		letter-spacing: .25em;
+		text-transform: uppercase;
+		
+		&:first-child {
+			margin-left: 0;
+		}
+		
+		&:last-child {
+			margin-right: 0;
+		}
+		
+		&:hover,
+		&.qodef--active {
+			color: $main-color;
+		}
+	}
+}

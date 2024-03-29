@@ -1,0 +1,63 @@
+/* ==========================================================================
+   Blog List styles
+   ========================================================================== */
+$light-skin-color: #fff;
+$light-skin-text-color: #b8b8b8;
+
+.qodef-blog {
+	
+	&.qodef-skin--light {
+		
+		.qodef-blog-item {
+			
+			.qodef-e-title {
+				color: $light-skin-color;
+				
+				a {
+					
+					&:hover {
+						color: $light-skin-hover-color;
+					}
+				}
+			}
+			
+			.qodef-e-excerpt {
+				color: $light-skin-text-color;
+			}
+			
+			.qodef-e-read-more {
+				
+				.qodef-button.qodef-layout--textual {
+					color: $light-skin-color;
+					
+					&:hover {
+						color: $main-color;
+					}
+				}
+			}
+			
+			.qodef-e-info {
+				
+				&.qodef-info--top {
+					
+					a {
+						
+						&:hover {
+							color: $light-skin-color;
+						}
+					}
+				}
+			}
+			
+			.qodef-e-info-item {
+				
+				a {
+					
+					&:hover {
+						color: $main-color;
+					}
+				}
+			}
+		}
+	}
+}

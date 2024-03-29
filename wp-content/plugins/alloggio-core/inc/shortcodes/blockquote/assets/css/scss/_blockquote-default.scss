@@ -1,0 +1,41 @@
+/* ==========================================================================
+   Section Title shortcode styles
+   ========================================================================== */
+
+.qodef-blockquote {
+	@include qodefRelativeLayout();
+	padding: 14px 22px 8px;
+	
+	&:before {
+		content: '';
+		position: absolute;
+		display: block;
+		width: 1px;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-color: $main-color;
+	}
+	
+	&.qodef-alignment--center {
+		text-align: center;
+	}
+	
+	&.qodef-alignment--left {
+		text-align: left;
+	}
+	
+	&.qodef-alignment--right {
+		text-align: right;
+	}
+	
+	.qodef-m-title {
+		margin: 0;
+		color: $main-color;
+	}
+	
+	.qodef-m-author {
+		margin: 10px 0 0;
+		color: $main-color;
+	}
+}

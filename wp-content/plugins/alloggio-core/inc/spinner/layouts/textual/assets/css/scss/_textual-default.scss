@@ -1,0 +1,31 @@
+/* ==========================================================================
+   Spinner layout styles
+   ========================================================================== */
+
+#qodef-page-spinner {
+	&.qodef-layout--textual {
+		.qodef-m-inner {
+			.qodef-textual-spinner-text {
+				display: flex;
+				@include qodefHeadingStyle(h3);
+				opacity: 0;
+			}
+			
+			.qodef-e-character {
+				opacity: 0;
+			}
+		}
+	}
+}
+
+@include keyframes(qodef-fade-in) {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}

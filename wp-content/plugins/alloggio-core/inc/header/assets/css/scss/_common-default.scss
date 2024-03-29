@@ -1,0 +1,100 @@
+/* ==========================================================================
+   Header common styles
+   ========================================================================== */
+
+$left-right-spacing: 15px;
+
+#qodef-page-header {
+
+	.qodef-header-navigation > ul > li {
+
+		> a {
+			
+			.qodef-header--light:not(.qodef-header--sticky-display) & {
+				color: #fff !important;
+				
+				&:hover {
+					color: $main-color !important;
+				}
+			}
+			
+			.qodef-header--dark:not(.qodef-header--sticky-display) & {
+				color: #000 !important;
+				
+				&:hover {
+					color: $main-color !important;
+				}
+			}
+		}
+		
+		&.current-menu-ancestor,
+		&.current-menu-item {
+			
+			> a {
+				
+				.qodef-header--light:not(.qodef-header--sticky-display) &,
+				.qodef-header--dark:not(.qodef-header--sticky-display) & {
+					color: $main-color !important;
+				}
+			}
+		}
+	}
+
+	.qodef-widget-holder {
+		display: flex;
+		align-items: center;
+		height: 100%;
+		margin-left: $left-right-spacing * 2;
+
+		.widget {
+			margin: 0 $left-right-spacing;
+			
+			&:first-child {
+				margin-left: 0;
+			}
+			
+			&:last-child {
+				margin-right: 0;
+			}
+			
+			&.widget_alloggio_core_separator {
+				margin: 0;
+			}
+			
+			&.widget_custom_html {
+				height: 100%;
+				
+				> * {
+					height: 100%;
+				}
+			}
+			
+			&.widget_icl_lang_sel_widget {
+				height: 100%;
+				
+				.wpml-ls-legacy-dropdown,
+				.wpml-ls-legacy-dropdown-click {
+					height: 100%;
+					display: flex;
+					align-items: center;
+					
+					.wpml-ls-item-toggle {
+						height: 100%;
+					}
+				}
+			}
+		}
+	}
+	
+	div[id^="monster-widget-placeholder"],
+	div[id^="woo-monster-widget-placeholder"] {
+		display: none;
+	}
+}
+
+#qodef-page-header-inner {
+
+	&.qodef-content-grid {
+		padding: 0;
+	}
+}

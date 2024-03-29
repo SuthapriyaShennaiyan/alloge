@@ -1,0 +1,93 @@
+/* ==========================================================================
+   Opener icon styles
+   ========================================================================== */
+
+.qodef-opener-icon {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 1;
+	
+	.qodef-m-icon {
+		position: relative;
+		visibility: visible;
+		
+		&.qodef--close {
+			position: absolute;
+			top: 0;
+			left: 0;
+			visibility: hidden;
+		}
+	}
+	
+	&.qodef-source--icon-pack {
+		font-size: 35px;
+		
+		* {
+			display: inline-block;
+			line-height: inherit;
+			
+			&:before {
+				display: inline-block;
+				line-height: inherit;
+			}
+		}
+	}
+	
+	&.qodef-source--svg-path {
+		
+		span {
+			position: relative;
+			
+			> * {
+				vertical-align: middle;
+			}
+			
+			> *,
+			path {
+				fill: currentColor;
+				stroke: currentColor;
+			}
+		}
+	}
+	
+	&.qodef-source--predefined {
+		.qodef-m-lines {
+			position: relative;
+			width: 31px;
+			height: 19px;
+			display: flex;
+			justify-content:space-between;
+			flex-direction: column;
+		}
+		
+		.qodef-m-line {
+			left: 0;
+			height: 1px;
+			width: 100%;
+			background-color: currentColor;
+			transition: opacity .5s ease-out, transform .5s ease-out;
+		}
+	}
+	
+	@media only screen and (min-width: $screen-size-1025) {
+		
+		.qodef-header--light:not(.qodef-fullscreen-menu--opened) & {
+			
+			&.qodef-source--icon-pack,
+			&.qodef-source--svg-path,
+			&.qodef-source--predefined {
+				color: #fff !important;
+			}
+		}
+		
+		.qodef-header--dark:not(.qodef-fullscreen-menu--opened) & {
+			
+			&.qodef-source--icon-pack,
+			&.qodef-source--svg-path,
+			&.qodef-source--predefined {
+				color: #000 !important;
+			}
+		}
+	}
+}

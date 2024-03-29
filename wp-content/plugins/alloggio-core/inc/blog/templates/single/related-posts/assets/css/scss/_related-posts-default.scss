@@ -1,0 +1,37 @@
+/* ==========================================================================
+   Related Posts styles
+   ========================================================================== */
+
+#qodef-related-posts {
+	@include qodefRelativeLayout();
+	
+	.qodef-related-posts-title {
+		margin-top: 60px;
+		padding-top: 53px;
+		border-top: 1px solid rgba($main-color, .3);
+	}
+	
+	.qodef-e-info {
+		
+		&.qodef-info--top {
+			
+			> * {
+				display: inline-block;
+				margin-right: 6px;
+				color: $main-color;
+				
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+			
+			a {
+				color: $main-color;
+				
+				&:hover {
+					color: $second-color;
+				}
+			}
+		}
+	}
+}

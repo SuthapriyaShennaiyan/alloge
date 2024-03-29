@@ -1,0 +1,66 @@
+/* ==========================================================================
+   Image Gallery shortcode styles
+   ========================================================================== */
+
+.qodef-image-gallery {
+	
+	&.qodef--has-shadow {
+		
+		.swiper-slide {
+			box-shadow: 0px 0px 21px 0px rgba(130, 45, 21, 0.1);
+		}
+		
+		.qodef-image-wrapper:not(.swiper-slide) {
+			
+			img {
+				box-shadow: 0px 0px 21px 0px rgba(130, 45, 21, 0.1);
+			}
+		}
+	}
+	
+	&.qodef--has-border {
+		.qodef-image-wrapper {
+			img {
+				border: 1px solid $light-border-color;
+			}
+		}
+	}
+	
+	&.qodef-layout--columns.qodef--predefined {
+		
+		.qodef-grid-item {
+			
+			a, img {
+				display: block;
+				width: 100%;
+			}
+		}
+		
+		@media only screen and (min-width: $screen-size-481) {
+			
+			> .qodef-grid-inner {
+				display: flex;
+				align-items: stretch;
+				flex-wrap: wrap;
+				
+				a, img {
+					height: 100%;
+				}
+			}
+			
+			&.qodef-col-num--1 {
+				
+				> .qodef-grid-inner {
+					
+					> .qodef-grid-item {
+						
+						&:nth-child(3n+2),
+						&:nth-child(3n+3) {
+							width: 50%;
+						}
+					}
+				}
+			}
+		}
+	}
+}

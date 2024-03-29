@@ -1,0 +1,328 @@
+/* ==========================================================================
+   Room Single part styles
+   ========================================================================== */
+
+#qodef-room-reservation {
+    @include qodefRelativeLayout();
+    padding: 26px 40px 40px;
+    background-color: $additional-background-color;
+    
+    .qodef-room-reservation-title {
+        margin: 0 0 39px;
+    }
+}
+
+#qodef-room-reservation-form {
+    
+    .qodef-m-field {
+        @include qodefRelativeLayout();
+        margin-bottom: 36px;
+        
+        label {
+            margin-bottom: 5px;
+            @include qodefCustomTextStyle();
+        }
+    
+        input,
+        select {
+            margin-bottom: 0;
+        
+            &:hover {
+                border-color: $heading-color;
+            }
+        }
+    
+        .select2-container--default {
+            margin-bottom: 0;
+        
+            .select2-selection--single {
+            
+                &:hover {
+                    border-color: $heading-color;
+                }
+            }
+        }
+        
+        &.qodef--room-amount {
+            
+            .qodef-e-input {
+                width: 100%;
+            }
+        }
+        
+        &.qodef--guests {
+            
+            .qodef-m-field-input-icon {
+                top: calc(50% - 10px);
+                width: 20px;
+            }
+    
+            .qodef-m-field-persons {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                display: block;
+                padding: 20px;
+                background-color: $additional-background-color;
+                border: 1px solid $border-color;
+                border-top-width: 0;
+                visibility: hidden;
+                z-index: -1;
+                opacity: 0;
+                transition: .35s ease-out;
+                
+                &.qodef--above {
+                    top: auto;
+                    bottom: calc(100% - 24px); // 24 is field label height + label margin bottom
+                    border-top-width: 1px;
+                    border-bottom-width: 0;
+                }
+                
+                &.qodef--opened {
+                    visibility: visible;
+                    opacity: 1;
+                    z-index: 999;
+                }
+            }
+    
+            .qodef-m-field-person {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 20px;
+    
+                .qodef-e-input {
+                    flex-shrink: 0;
+                    width: 44px;
+                }
+                
+                .select2-container--default {
+    
+                    .select2-selection--single {
+                        height: auto;
+                        padding: 3px 6px;
+                        line-height: 22px;
+                    }
+                    
+                    .select2-selection__arrow {
+                        right: 2px;
+                        width: 20px;
+                        
+                        &:before {
+                            font-size: 10px;
+                        }
+                    }
+                }
+    
+                .qodef-e-label-text {
+                    color: $heading-color;
+                }
+    
+                .qodef-e-label-description {
+                    display: block;
+                    font-size: 13px;
+                    line-height: 1;
+                }
+    
+                &.qodef--button {
+                    margin: 16px 0 0;
+    
+                    .qodef-button {
+                        padding-top: 7px;
+                        padding-bottom: 7px;
+                    }
+                }
+            }
+        }
+        
+        &.qodef--extra-services {
+            margin-bottom: 25px;
+            
+            .qodef-m-field-title {
+                margin-bottom: 19px;
+            }
+            
+            .qodef-m-field-item {
+                position: relative;
+                display: flex;
+                align-items: center;
+                margin: 9px 0;
+                
+                &.qodef--checked {
+    
+                    .qodef-e-field-checkbox {
+                        background-color: $main-color;
+                        background-image: url('../img/check-mark.png');
+                    }
+                }
+                
+                &.qodef--disabled {
+    
+                    .qodef-e-field-checkbox,
+                    .qodef-e-field-label-name {
+                        cursor: not-allowed;
+                    }
+                }
+            }
+        
+            .qodef-e-field-input {
+                position: absolute;
+                top: 0;
+                left: 0;
+                visibility: hidden;
+            }
+            
+            .qodef-e-field-checkbox {
+                position: relative;
+                flex-shrink: 0;
+                width: 20px;
+                height: 20px;
+                margin: 0 15px 0 0;
+                border: 1px solid $border-color;
+                background-position: center 40%;
+                background-repeat: no-repeat;
+                cursor: pointer;
+            }
+            
+            .qodef-e-field-label {
+                display: inline-flex;
+                align-items: flex-end;
+                justify-content: space-between;
+                width: 100%;
+            }
+            
+            .qodef-e-field-label-name {
+                flex-shrink: 0;
+                cursor: pointer;
+            }
+            
+            .qodef-e-field-label-line {
+                position: relative;
+                bottom: 8px;
+                width: 100%;
+                height: 1px;
+                margin: 0 8px 0 2px;
+                background-color: rgba($text-color, .12);
+            }
+            
+            .qodef-e-field-label-price {
+                flex-shrink: 0;
+            }
+        }
+        
+        &.qodef--price {
+            margin-bottom: 41px;
+            
+            .qodef-m-field-title {
+                margin-bottom: 17px;
+            }
+            
+            .qodef-m-price {
+                font-size: 20px;
+            }
+        }
+    
+        &.qodef--booking {
+            margin: 0;
+        }
+    }
+    
+    .qodef-m-field-title {
+        margin: 0;
+    }
+    
+    .qodef-m-field-input-wrapper {
+        @include qodefRelativeLayout();
+    }
+    
+    .qodef-m-field-input-icon {
+        position: absolute;
+        top: calc(50% - 8px);
+        right: 18px;
+        width: 16px;
+        height: auto;
+        fill: none;
+        stroke: $heading-color;
+        z-index: 1;
+        cursor: pointer;
+    }
+    
+    &:after {
+        content: '';
+        @include qodefAbsoluteLayout();
+        background-color: rgba(#fff, .8);
+        z-index: 1;
+    }
+    
+    .qodef-m-spinner {
+        position: absolute;
+        color: $main-color;
+        fill: currentColor;
+        animation: qode-rotate 2s infinite linear;
+        z-index: -1;
+    
+        &.qodef--form {
+            top: calc(50% - 30px);
+            left: calc(50% - 30px);
+            width: 60px;
+            z-index: 2;
+        }
+        
+        &.qodef--button {
+            top: calc(50% - 18px);
+            left: calc(50% - 18px);
+            width: 36px;
+            visibility: hidden;
+        }
+    }
+    
+    .qodef-m-response {
+        position: relative;
+        display: none;
+        line-height: 1;
+        margin-top: 20px;
+        
+        &.qodef--show {
+            display: block;
+        }
+        
+        &.qodef--success {
+            color: #0b9c0b;
+        }
+        
+        &.qodef--error {
+            color: #ff3135;
+        }
+    }
+    
+    &.qodef--loaded {
+        
+        &:after {
+            display: none;
+        }
+    
+        .qodef-m-spinner {
+        
+            &.qodef--form {
+                display: none;
+            }
+        }
+    }
+    
+    &.qodef--checking {
+        
+        .qodef-button {
+            visibility: hidden;
+        }
+    
+        .qodef-m-spinner {
+    
+            &.qodef--button {
+                visibility: visible;
+                z-index: 1;
+            }
+        }
+    }
+}

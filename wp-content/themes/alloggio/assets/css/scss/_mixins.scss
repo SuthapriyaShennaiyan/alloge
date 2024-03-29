@@ -1,0 +1,482 @@
+/* ==========================================================================
+   Typography mixins
+   ========================================================================== */
+
+@mixin qodefParagraphStyle($color: $text-color) {
+    font-family: $text-font;
+    font-size: $text-font-size;
+    line-height: $text-line-height-em;
+    font-weight: $text-font-weight;
+    color: $color;
+}
+
+@mixin qodefLinkStyle() {
+    color: $heading-color;
+    text-decoration: none;
+    transition: $color-transition;
+    cursor: pointer;
+
+    &:hover {
+        color: $main-color;
+    }
+}
+
+@mixin qodefBlockquoteStyle() {
+    position: relative;
+	padding: 14px 22px 8px;
+    border: none; // to prevent gutenberg style
+    font-family: $heading-font;
+    font-size: 23px;
+    line-height: 1.304347826086957em;
+    font-weight: 400;
+    color: $main-color;
+	
+	&:before {
+		content: '';
+		position: absolute;
+		display: block;
+		width: 1px;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-color: $main-color;
+	}
+    
+    &.has-text-align-right {
+    
+        &:before {
+            left: auto;
+            right: 0;
+        }
+    }
+}
+
+@mixin qodefH1Style() {
+    font-size: 60px;
+    line-height: 1.033333333333333em;
+    font-weight: 500;
+    
+    @include qodefScreenSize1024 {
+        font-size: 54px;
+    }
+    
+    @include qodefScreenSize680 {
+        font-size: 48px;
+    }
+}
+
+@mixin qodefH2Style() {
+    font-size: 43px;
+    line-height: 1.069767441860465em;
+    font-weight: 500;
+    
+    @include qodefScreenSize1024 {
+        font-size: 38px;
+    }
+    
+    @include qodefScreenSize680 {
+        font-size: 36px;
+    }
+}
+
+@mixin qodefH3Style() {
+    font-size: 35px;
+    line-height: 1.142857142857143em;
+    font-weight: 500;
+    
+    @include qodefScreenSize1024 {
+        font-size: 29px;
+    }
+}
+
+@mixin qodefH4Style() {
+    font-size: 25px;
+    line-height: 1.2em;
+    font-weight: 500;
+    
+    @include qodefScreenSize680 {
+        font-size: 22px;
+    }
+}
+
+@mixin qodefH5Style() {
+    font-size: 18px;
+    line-height: 1.333333333333333em;
+    font-weight: 500;
+}
+
+@mixin qodefH6Style() {
+    font-size: 14px;
+    line-height: 1.285714285714286em;
+    font-weight: 500;
+    
+    body:not([class*="alloggio-core"]) & {
+        font-size: 16px;
+    }
+}
+
+@mixin qodefH7Style($color: $text-color) {
+    font-family: $text-font;
+    font-size: 21px;
+    line-height: 1.619047619047619em;
+    font-weight: 300;
+    
+    @if ($color) {
+        color: $color;
+    }
+}
+
+@mixin qodefCustomTextStyle($color: $heading-color, $line-height: 1.6em) {
+    font-family: $additional-text-font;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    
+    @if ($line-height) {
+        line-height: $line-height;
+    }
+    
+    @if ($color) {
+        color: $color;
+    }
+}
+
+@mixin qodefHeadingStyle($heading: null, $with-color: true, $with-link-style: false) {
+    font-family: $heading-font;
+
+    @if ($with-color) {
+        color: $heading-color;
+    }
+
+    @if ($heading == 'h1') {
+        @include qodefH1Style();
+    } @else if ($heading == 'h2') {
+        @include qodefH2Style();
+    } @else if ($heading == 'h3') {
+        @include qodefH3Style();
+    } @else if ($heading == 'h4') {
+        @include qodefH4Style();
+    } @else if ($heading == 'h5') {
+        @include qodefH5Style();
+    } @else if ($heading == 'h6') {
+        @include qodefH6Style();
+    }
+    
+    @if ($with-link-style) {
+
+        a {
+            @include qodefTypographyLayout();
+
+            &:hover {
+                color: $main-color;
+            }
+        }
+    }
+}
+
+@mixin qodefTypographyLayout() {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    color: inherit;
+}
+
+/* ==========================================================================
+   Typography mixins - end
+   ========================================================================== */
+
+/* ==========================================================================
+   Menu mixins - begin
+   ========================================================================== */
+
+$menu-level-two-item-top-bottom-spacing: 3px;
+$menu-level-two-item-padding-animation: 10px;
+
+@mixin qodefMenuLevelOneInitialStyle($color: false) {
+    @include qodefCustomTextStyle($color, null);
+}
+
+@mixin qodefMenuLevelOneHoverStyle($color: $main-color) {
+    color: $color;
+}
+
+@mixin qodefMenuLevelTwoInitialTypographyStyle($color: false) {
+    font-family: $additional-text-font;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    
+    @if ($color) {
+        color: $color;
+    }
+}
+
+@mixin qodefMenuLevelTwoInitialStyle($position: 'left') {
+    position: relative;
+    display: flex;
+    white-space: normal; // This is set because of flex to wrap text
+    margin: $menu-level-two-item-top-bottom-spacing 0;
+    
+    @if ($position == 'right') {
+        justify-content: flex-end;
+    }
+    
+    .qodef-menu-item-icon {
+        flex-shrink: 0;
+    }
+}
+
+@mixin qodefMenuLevelTwoHoverStyle($position: 'left') {
+    color: $main-color;
+}
+
+@mixin qodefStripBackground($width: 30.004%, $background-color: $additional-background-color) {
+    content: '';
+    position: absolute;
+    display: block;
+    width: $width;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: $background-color;
+}
+
+/* ==========================================================================
+   Menu mixins - end
+   ========================================================================== */
+
+/* ==========================================================================
+   Layout mixins - begin
+   ========================================================================== */
+
+@mixin qodefRelativeLayout($vertical-align: top) {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    vertical-align: $vertical-align;
+}
+
+@mixin qodefAbsoluteLayout() {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ==========================================================================
+   Layout mixins - end
+   ========================================================================== */
+
+/* ==========================================================================
+   Input fields mixins - begin
+   ========================================================================== */
+
+@mixin qodefPlaceholder {
+    &::placeholder {
+        @content;
+        opacity: 1;
+    }
+}
+
+@mixin qodefRatingsStyle($color: $heading-color) {
+    @include qodefRelativeLayout();
+    line-height: 1;
+    
+    .qodef-m-inner {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+    }
+    
+    .qodef-m-star {
+        @include qodefRatingsStarStyle($color);
+        
+        &.qodef--active {
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+    }
+}
+
+@mixin qodefRatingsStarStyle($color: null) {
+    font-size: 14px;
+    letter-spacing: .1em;
+    @if ($color) {
+        color: $color;
+    }
+}
+
+@mixin qodefRatingsStarPseudoStarContent($active: false, $full: false) {
+    @if ($active) {
+        content: "\e033\e033\e033\e033\e033";
+    } @else if ($full) {
+        content: "\e033";
+    } @else {
+        content: "\e031";
+    }
+}
+
+@mixin qodefRatingsStarPseudoStyle($color: null) {
+    @if ($color) {
+        @include qodefRatingsStarStyle($color);
+    } @else {
+        @include qodefRatingsStarStyle();
+    }
+    font-family: "ElegantIcons";
+    line-height: 1;
+    white-space: nowrap;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+   Input fields mixins - end
+   ========================================================================== */
+
+/* ==========================================================================
+   Grid size mixins - begin
+   ========================================================================== */
+
+@mixin qodefScreenSize1600 {
+    @media only screen and (max-width: $screen-size-1600) {
+        @content;
+    }
+}
+
+@mixin qodefScreenSize1440 {
+    @media only screen and (max-width: $screen-size-1440) {
+        @content;
+    }
+}
+
+@mixin qodefScreenSize1366 {
+    @media only screen and (max-width: $screen-size-1366) {
+        @content;
+    }
+}
+
+@mixin qodefScreenSize1280 {
+    @media only screen and (max-width: $screen-size-1280) {
+        @content;
+    }
+}
+
+@mixin qodefScreenSize1024 {
+    @media only screen and (max-width: $screen-size-1024) {
+        @content;
+    }
+}
+
+@mixin qodefScreenSize768 {
+    @media only screen and (max-width: $screen-size-768) {
+        @content;
+    }
+}
+
+@mixin qodefScreenSize680 {
+    @media only screen and (max-width: $screen-size-680) {
+        @content;
+    }
+}
+
+@mixin qodefScreenSize480 {
+    @media only screen and (max-width: $screen-size-480) {
+        @content;
+    }
+}
+
+/* ==========================================================================
+   Grid size mixins - end
+   ========================================================================== */
+
+/* ==========================================================================
+   Helper mixins - begin
+   ========================================================================== */
+
+@function map-deep-get($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+
+    @return $map;
+}
+
+@function get-text-space() {
+    $value: ($text-line-height - $text-font-size) / 2 + 3; // 3 is temporary value, it's half size of widget title line height minus font size
+
+    @return $value;
+}
+
+/* ==========================================================================
+   Helper mixins - end
+   ========================================================================== */
+
+/* ==========================================================================
+   Clear fix mixin - begin
+   ========================================================================== */
+
+@mixin qodefClearFix {
+    &:before,
+    &:after {
+        content: '';
+        display: table;
+        table-layout: fixed;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+/* ==========================================================================
+   Clear fix mixin - end
+   ========================================================================== */
+
+/* ==========================================================================
+   Custom mixin - begin
+   ========================================================================== */
+
+@mixin qodefMoveImageInitial($duration: .29s, $zoom: 1.02) {
+    /*transform: translateX(-$move * 1%) translateZ(0) scale(1 + 2 * $move * .01)*/;//translateX(-1%) scale(1.02)
+    transform: translateX(-4px) translateZ(0) scale($zoom);
+    transition: $duration cubic-bezier(.4,.12,.4,.85);
+}
+
+@mixin qodefMoveImageHover($duration: .35s,$zoom: 1.02) {
+    transform: translateX(4px) translateZ(0) scale($zoom);
+    transition: $duration cubic-bezier(.4,.12,.4,.85);
+    /*transform: translateX($move * 1%) translateZ(0) scale(1 + 2 * $move * .01);*///translateX(1%) scale(1.02)
+}
+
+@mixin qodefLabelInitial(){
+    &:after {
+        @include qodefAbsoluteLayout;
+        background-color: $additional-background-color;
+        content: '';
+        z-index: -1;
+        transition: .35s $custom-transition-timing;
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+}
+
+@mixin qodefLabelHover(){
+    &:after {
+        transform: scaleX(1.05);
+    }
+}
+
+/* ==========================================================================
+   Custom mixin - end
+   ========================================================================== */

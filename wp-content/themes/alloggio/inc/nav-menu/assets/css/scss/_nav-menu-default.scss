@@ -1,0 +1,221 @@
+/* ==========================================================================
+   Navigation Menu styles
+   ========================================================================== */
+
+$menu-top-bottom-spacing: 19px;
+$menu-item-side-spacing: 21px;
+$menu-level-two-item-side-spacing: 30px;
+
+.qodef-header-navigation {
+    height: 100%;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+            position: relative;
+            margin: 0;
+            padding: 0;
+
+            &.qodef--hide-link {
+
+                > a {
+                    cursor: default;
+                }
+            }
+
+            &.qodef-menu-item--narrow {
+
+                ul {
+                    position: absolute;
+                    top: 100%;
+                    width: 250px;
+                    margin: 0;
+                    padding: $menu-top-bottom-spacing 0;
+                    background-color: $additional-background-color;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: .25s ease-out;
+
+                    li {
+                        padding: 0 $menu-level-two-item-side-spacing;
+
+                        &.menu-item-has-children {
+
+                            > a {
+
+                                &:after {
+                                    font-family: 'simple-line-icons';
+                                    content: '\e606';
+                                    position: absolute;
+                                    top: calc(50% - 6px);
+                                    right: 0;
+                                    font-size: 11px;
+                                    line-height: 1;
+
+                                    // fallback when core plugin is not activated
+                                    body:not([class*="alloggio-core"]) & {
+                                        width: 6px;
+                                        height: 6px;
+                                        font-size: 0;
+                                        border-width: 0 1px 1px 0;
+                                        border-style: solid;
+                                        border-color: currentColor;
+                                        transform: rotate(-45deg);
+                                    }
+                                }
+                            }
+
+                            &:hover {
+
+                                > ul {
+                                    opacity: 1;
+                                    visibility: visible;
+                                }
+                            }
+                        }
+                    }
+
+                    ul {
+                        top: calc(-#{$menu-top-bottom-spacing} - 3px); // 3px is item top margin
+                        left: 100%;
+                        background-color: $additional-background-color;
+                    }
+
+                    &.qodef-drop-down--right {
+                        left: auto;
+                        right: 0;
+                        text-align: right;
+
+                        li {
+
+                            &.menu-item-has-children {
+
+                                > a {
+
+                                    &:after {
+                                        content: '\e605';
+                                        left: 0;
+                                        right: auto;
+
+                                        // fallback when core plugin is not activated
+                                        body:not([class*="alloggio-core"]) & {
+                                            border-width: 1px 0 0 1px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        ul {
+                            left: -100%;
+                        }
+                    }
+                }
+
+                &:hover > ul {
+                    opacity: 1;
+                    visibility: visible;
+                    transition: opacity $transition-timing;
+                }
+            }
+        }
+    }
+
+    > ul {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        white-space: nowrap;
+
+        > li {
+            height: 100%;
+            margin: 0 $menu-item-side-spacing;
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            > a {
+                position: relative;
+                display: flex;
+                align-items: center;
+                height: 100%;
+
+                @include qodefMenuLevelOneInitialStyle();
+
+                &:hover {
+                    @include qodefMenuLevelOneHoverStyle();
+                }
+            }
+
+            &.current-menu-ancestor,
+            &.current-menu-item {
+
+                > a {
+                    @include qodefMenuLevelOneHoverStyle();
+                }
+            }
+
+            &.qodef-menu-item--narrow {
+
+                ul {
+
+                    li {
+
+                        > a {
+                            @include qodefMenuLevelTwoInitialTypographyStyle();
+                        }
+                    }
+
+                    /* LEFT --- STANDARD MENU LEVEL TWO AND THREE */
+                    &:not(.qodef-drop-down--right) {
+
+                        li {
+
+                            > a {
+                                @include qodefMenuLevelTwoInitialStyle();
+                            }
+
+                            &:hover,
+                            &.current-menu-ancestor,
+                            &.current-menu-item {
+
+                                > a {
+                                    @include qodefMenuLevelTwoHoverStyle();
+                                }
+                            }
+                        }
+                    }
+
+                    /* RIGHT --- STANDARD MENU LEVEL TWO AND THREE */
+                    &.qodef-drop-down--right {
+
+                        li {
+
+                            > a {
+                                @include qodefMenuLevelTwoInitialStyle(right);
+                            }
+
+                            &:hover,
+                            &.current-menu-ancestor,
+                            &.current-menu-item {
+
+                                > a {
+                                    @include qodefMenuLevelTwoHoverStyle(right);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

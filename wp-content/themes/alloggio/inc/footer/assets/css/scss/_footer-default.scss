@@ -1,0 +1,65 @@
+/* ==========================================================================
+   Footer styles
+   ========================================================================== */
+
+#qodef-page-footer {
+	@include qodefRelativeLayout();
+	
+	> * {
+		@include qodefRelativeLayout();
+	}
+}
+
+#qodef-page-footer-top-area {
+	padding: 118px 0 114px;
+	background-color: $additional-background-color;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-top: 0 solid $border-color;
+	
+	.qodef-content-full-width {
+		padding: $full-width-side-padding-large;
+	}
+	
+	.qodef--boxed & {
+		padding-left: $boxed-grid-padding-size;
+		padding-right: $boxed-grid-padding-size;
+	}
+	
+	.qodef-footer--light & {
+		background-color: $heading-color;
+	}
+}
+
+#qodef-page-footer-bottom-area {
+	padding: 2px 0 0;
+	background-color: $additional-background-color;
+	border-top: 0 solid $border-color;
+	font-size: 14px;
+	line-height: 2em;
+	
+	p {
+		line-height: inherit;
+	}
+	
+	.qodef-grid {
+		
+		&.qodef-col-num--1 {
+			text-align: center;
+		}
+	}
+	
+	.qodef-footer--light & {
+		background-color: $heading-color;
+	}
+	
+	.qodef-content-full-width {
+		padding: $full-width-side-padding-large;
+	}
+	
+	.qodef--boxed & {
+		padding-left: $boxed-grid-padding-size;
+		padding-right: $boxed-grid-padding-size;
+	}
+}

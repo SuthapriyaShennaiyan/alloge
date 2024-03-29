@@ -1,0 +1,41 @@
+/* ==========================================================================
+   Standard Title layout styles
+   ========================================================================== */
+
+.qodef-page-title {
+	
+	&.qodef-title--standard {
+		
+		.qodef-m-title {
+			position: relative;
+			z-index: 2;
+		}
+	
+		.qodef-m-subtitle {
+			margin: 4px 0 0;
+		}
+		
+		span.qodef-m-subtitle {
+			position: absolute;
+			left: 0;
+			bottom: -22px;
+			width: 100%;
+			display: block;
+			color: rgba(#000, .04);
+			font-size: 150px;
+			line-height: 0.8;
+			text-transform: uppercase;
+			white-space: nowrap;
+			z-index: 1;
+			
+			@include qodefScreenSize1440 {
+				font-size: 130px;
+				bottom: -20px;
+			}
+			
+			@include qodefScreenSize1024 {
+				display: none;
+			}
+		}
+	}
+}

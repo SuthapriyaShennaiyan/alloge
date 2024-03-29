@@ -1,0 +1,20 @@
+/* ==========================================================================
+   Room Reservation Filter shortcode variation responsive styles
+   ========================================================================== */
+
+.qodef-room-reservation-filter {
+	
+	&.qodef-layout--split {
+		
+		@include qodefScreenSize680 {
+			padding: 26px 30px 30px;
+			
+			.qodef-m-form {
+				
+				.qodef-m-field {
+					width: 100%;
+				}
+			}
+		}
+	}
+}

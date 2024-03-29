@@ -1,0 +1,79 @@
+/* ==========================================================================
+   Room Reservation Filter shortcode variation responsive styles
+   ========================================================================== */
+
+.qodef-room-reservation-filter {
+	
+	&.qodef-layout--horizontal {
+	
+		@include qodefScreenSize1024 {
+			
+			&:not(.qodef-columns--3) {
+				
+				.qodef-m-form {
+					flex-wrap: wrap;
+					
+					.qodef-m-field {
+						
+						&:not(.qodef--booking) {
+							width: 50%;
+							margin-bottom: 36px;
+						}
+						
+						&.qodef--booking {
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+		
+		@media only screen and (min-width: $screen-size-681) and (max-width: $screen-size-768) {
+			
+			&.qodef-columns--3 {
+				
+				.qodef-m-form {
+					
+					.qodef-m-field-input-icon {
+						display: none;
+					}
+				}
+			}
+		}
+		
+		@include qodefScreenSize680 {
+			
+			&:not(.qodef-columns--3) {
+				
+				.qodef-m-form {
+					
+					.qodef-m-field {
+						
+						&:not(.qodef--booking) {
+							width: 100%;
+						}
+					}
+				}
+			}
+			
+			&.qodef-columns--3 {
+				
+				.qodef-m-form {
+					flex-wrap: wrap;
+					
+					.qodef-m-field {
+						
+						&:not(.qodef--booking) {
+							width: 100%;
+							margin-bottom: 36px;
+						}
+						
+						&.qodef--booking {
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+}

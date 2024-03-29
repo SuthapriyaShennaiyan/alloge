@@ -1,0 +1,20 @@
+/* ==========================================================================
+   Amenity list shortcode responsive styles
+   ========================================================================== */
+
+.qodef-amenity-list {
+	
+	@include qodefScreenSize1024 {
+		
+		.qodef-amenity-item {
+			width: 33.333333%;
+		}
+	}
+	
+	@include qodefScreenSize680 {
+		
+		.qodef-amenity-item {
+			width: 50%;
+		}
+	}
+}

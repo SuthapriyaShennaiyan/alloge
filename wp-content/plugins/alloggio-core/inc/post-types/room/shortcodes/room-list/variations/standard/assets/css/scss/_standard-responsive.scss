@@ -1,0 +1,33 @@
+/* ==========================================================================
+   Room list shortcode variation responsive styles
+   ========================================================================== */
+
+.qodef-room-list {
+	
+	&.qodef-layout--standard {
+		
+		@include qodefScreenSize680 {
+			
+			.qodef-e-media-image {
+				margin-bottom: 34px;
+			}
+			
+			.qodef-e-content {
+				flex-wrap: wrap;
+				flex-direction: column-reverse;
+				
+				> * {
+					width: 100%;
+				}
+			}
+			
+			.qodef-e-content-text {
+				border-right: 0;
+			}
+			
+			.qodef-e-content-info {
+				margin-bottom: 6px;
+			}
+		}
+	}
+}

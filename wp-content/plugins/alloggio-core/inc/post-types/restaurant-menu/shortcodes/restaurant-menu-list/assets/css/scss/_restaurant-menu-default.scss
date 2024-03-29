@@ -1,0 +1,74 @@
+/* ==========================================================================
+   Restaurant Menu shortcode styles
+   ========================================================================== */
+
+.qodef-restaurant-menu-list {
+	padding: 42px 45px 16px;
+	
+	@include qodefScreenSize680 {
+		padding-left: 25px;
+	}
+	
+	&:before {
+		@include qodefStripBackground(19.685%, #fbfaf5);
+		
+		@include qodefScreenSize680 {
+			width: 30%;
+		}
+	}
+	
+	&.qodef-col-num--1 {
+		padding-right: 15%;
+	}
+	
+	&.qodef-gutter--no {
+		
+		&.qodef-col-num--1 {
+			
+			.qodef-grid-item {
+				margin-bottom: 28px;
+				
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+	
+	.qodef-e-heading {
+		display: flex;
+		align-items: baseline;
+	}
+	
+	.qodef-e-heading-title {
+		margin: 0;
+	}
+	
+	.qodef-e-heading-line {
+		flex-grow: 1;
+		border-bottom: 1px solid $border-color;
+		opacity: 0.5;
+		margin: 0 10px;
+	}
+	
+	.qodef-e-heading-price {
+		margin: 0;
+		font-family: $text-font;
+	}
+	
+	.qodef-e-description {
+		margin: 7px 0 0;
+	}
+	
+	&.qodef-item-skin--light {
+		
+		.qodef-e-heading-title,
+		.qodef-e-heading-price {
+			color: #fff;
+		}
+		
+		.qodef-e-description {
+			color: $main-color;
+		}
+	}
+}

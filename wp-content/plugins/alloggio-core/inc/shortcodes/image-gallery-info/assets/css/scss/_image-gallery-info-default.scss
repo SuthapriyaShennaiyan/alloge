@@ -1,0 +1,97 @@
+/* ==========================================================================
+   Image Gallery Info shortcode styles
+   ========================================================================== */
+
+.qodef-image-gallery-info {
+	@include qodefRelativeLayout();
+	
+	.qodef-m-inner {
+		display: flex;
+		align-items: center;
+		margin: 0 -50px;
+		
+		.qodef-m-gallery,
+		.qodef-m-items {
+			padding: 0 50px;
+		}
+		
+		.qodef-m-items {
+			width: 48.5%;
+		}
+		
+		
+		.qodef-m-gallery {
+			width: 51.5%;
+			
+			.qodef-image-gallery {
+				max-width: 760px;
+			}
+		}
+		
+		.qodef-m-items {
+			max-width: 670px;
+		}
+		
+		@media only screen and (min-width: $screen-size-1025) {
+			.qodef-m-items {
+				margin-top: -78px;
+			}
+		}
+	}
+	
+	.qodef-m-title {
+		margin: 0;
+	}
+	
+	.qodef-m-subtitle {
+		margin: 24px 0 0;
+	}
+	
+	span.qodef-m-subtitle {
+		display: block;
+		
+		@media only screen and (min-width: $screen-size-1025) {
+			font-size: 21px;
+			line-height: 1.476190476190476em;
+		}
+	}
+	
+	.qodef-m-text-items {
+		margin: 42px 0 20px;
+		
+		.qodef-m-text {
+			position: absolute;
+			top: 0;
+			left: 0;
+			margin: 0;
+			opacity: 0;
+			transition: $opacity-transition;
+			z-index: -1;
+			line-height: 34px;
+			
+			&.qodef--active {
+				position: relative;
+				opacity: 1;
+				z-index: 9;
+			}
+		}
+	}
+	
+	.qodef-m-button {
+		margin: 45px 0 0;
+	}
+	
+	.qodef-swiper-container {
+		
+		&:after {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: calc(100% - 70px);
+			content: '';
+			border: 1px solid $light-border-color;
+			z-index: 1;
+		}
+	}
+}

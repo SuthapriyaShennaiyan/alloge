@@ -1,0 +1,22 @@
+/* ==========================================================================
+   404 page responsive styles
+   ========================================================================== */
+
+@include qodefScreenSize1440 {
+	
+	#qodef-404-page {
+		padding: 300px 10% 155px;
+	}
+}
+
+@include qodefScreenSize680 {
+	
+	#qodef-404-page {
+		padding: 240px 40px 180px;
+		
+		.qodef-404-watermark {
+			top: calc(50% - 190px);
+			font-size: 185px;
+		}
+	}
+}

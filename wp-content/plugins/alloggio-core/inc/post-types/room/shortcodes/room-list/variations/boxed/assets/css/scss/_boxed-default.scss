@@ -1,0 +1,97 @@
+/* ==========================================================================
+   Room list shortcode variation styles
+   ========================================================================== */
+
+.qodef-room-list {
+	
+	&.qodef-layout--boxed {
+		$boxed-space: 40px;
+		$boxed-color: $additional-background-color;
+		
+		.swiper-slide {
+			/*.qodef-e-media-image a {
+				transform: scale(1.25) translateX(70px);
+				transition: .7s ease-out .4s;
+			}
+			
+			&.swiper-slide-visible {
+				.qodef-e-media-image a{
+					transform: scale(1.25) translateX(0px);
+					transition-delay: 0s;
+				}
+			}*/
+		}
+		
+		.qodef-e-media {
+			position: relative;
+			padding-left: $boxed-space;
+			
+			&:before {
+				content: '';
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				/*width: calc(#{$boxed-space} + 1px);*/ // 1px is to prevent empty line because image can't be decimal
+				width: calc(100% - 2*#{$boxed-space});
+				height: calc(100% - 2*#{$boxed-space});
+				background-color: $boxed-color;
+				z-index: -1;
+			}
+		}
+		
+		.qodef-e-content {
+			width: calc(100% - 2*#{$boxed-space});
+			margin-bottom: 22px;
+			padding: 27px $boxed-space calc(#{$boxed-space} - 8px);
+			background-color: $boxed-color;
+		}
+		
+		.qodef-e-heading {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			
+			.qodef-e-price-label {
+				color: $main-color;
+			}
+			
+			.qodef-e-price-value {
+				position: relative;
+				top: -4px;
+				font-family: $heading-font;
+				font-size: 35px;
+			}
+		}
+		
+		.qodef-e-price {
+			flex-shrink: 0;
+		}
+		
+		.qodef-e-info-items {
+			color: $main-color;
+			
+			.qodef-e-price {
+				display: none;
+			}
+			
+			.qodef-e-price-value {
+				color: inherit;
+			}
+		}
+		
+		.qodef-e-excerpt {
+			margin-top: 12px;
+		}
+		
+		.qodef-e-button {
+			margin-top: 34px;
+		}
+		
+		.qodef-m-pagination {
+			
+			&.qodef--load-more {
+				margin-top: 18px;
+			}
+		}
+	}
+}

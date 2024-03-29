@@ -1,0 +1,114 @@
+/* ==========================================================================
+   Room Profile Global styles - begin
+   ========================================================================== */
+
+.qodef-profile-reserved-rooms {
+	
+	.qodef-m-heading {
+		padding-bottom: 11px;
+		border-bottom: 1px solid #e9d2cc;
+		
+		> * {
+			margin: 0;
+		}
+	}
+	
+	.qodef-m-text {
+		margin-top: 15px;
+	}
+	
+	.qodef-m-reserved-rooms {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+	
+	.qodef-m-reserved-room {
+		display: inline-flex;
+		justify-content: space-between;
+		width: 100%;
+		padding: 25px 0;
+		margin: 0;
+		border-bottom: 1px solid #e9d2cc;
+		
+		.qodef-ei-image {
+			width: 220px;
+			flex-shrink: 0;
+			margin-right: 25px;
+			
+			a, img {
+				display: block;
+			}
+		}
+		
+		.qodef-ei-heading {
+			width: 100%;
+		}
+		
+		.qodef-ei-title {
+			margin: 0;
+		}
+		
+		.qodef-reservation-info {
+			margin-top: 12px;
+			
+			.qodef--mark {
+				margin: 0 2px;
+			}
+		}
+		
+		.qodef-ei-price-value {
+			color: $main-color;
+		}
+		
+		.qodef-ei-order {
+			flex-shrink: 0;
+			
+			.qodef-ei-order-status {
+				display: inline-block;
+				vertical-align: top;
+				padding: 0 1em;
+				line-height: 2.5em;
+				color: #777;
+				background: #e5e5e5;
+				border-radius: 4px;
+				border-bottom: 1px solid rgba(0, 0, 0, .05);
+				white-space: nowrap;
+				
+				&.qodef--completed {
+					color: #2e4453;
+					background: #c8d7e1;
+				}
+				
+				&.qodef--on-hold {
+					color: #94660c;
+					background: #f8dda7;
+				}
+				
+				&.qodef--failed {
+					color: #761919;
+					background: #eba3a3;
+				}
+				
+				&.qodef--processing {
+					color: #5b841b;
+					background: #c6e1c6;
+				}
+				
+				&.qodef--trash {
+					color: #761919;
+					background: #eba3a3;
+				}
+			}
+		}
+	}
+	
+	.qodef-m-not-found {
+		margin: 0;
+	}
+}
+
+/* ==========================================================================
+   room Profile Global styles - end
+   ========================================================================== */

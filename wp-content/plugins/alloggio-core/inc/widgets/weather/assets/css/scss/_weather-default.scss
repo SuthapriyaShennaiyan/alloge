@@ -1,0 +1,235 @@
+/* ==========================================================================
+   Weather Widget style - begin
+   ========================================================================== */
+
+.qodef-weather-widget {
+	cursor: default;
+
+	
+	.qodef-m-city {
+		margin: 0 0 6px;
+	}
+	
+	.qodef-m-inner {
+		display: flex;
+		align-items: center;
+	}
+	
+	.qodef-m-weather {
+		margin-right: 20px;
+		flex-shrink: 0;
+	}
+	
+	.qodef-m-weather-icon {
+		font-family: "linea-weather-10";
+		font-size: 45px;
+		line-height: 1;
+		font-style: normal !important;
+		font-weight: normal !important;
+		font-variant: normal !important;
+		text-transform: none !important;
+		speak: none;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		margin-bottom: 15px;
+		
+		&:before {
+			content: '';
+		}
+		
+		&.qodef--mist,
+		&.qodef--haze {
+			
+			&:before {
+				content: "\e00d";
+			}
+		}
+		
+		&.qodef--snow,
+		&.qodef--light-snow {
+			
+			&:before {
+				content: "\e02d";
+			}
+		}
+		
+		&.qodef--thunderstorm {
+			
+			&:before {
+				content: "\e034";
+			}
+		}
+		
+		&.qodef--rain,
+		&.qodef--drizzle,
+		&.qodef--light-rain,
+		&.qodef--moderate-rain,
+		&.qodef--light-intensity-drizzle,
+		&.qodef--light-intensity-shower-rain,
+		&.qodef--light-rain-and-snow {
+			
+			&:before {
+				content: "\e027";
+			}
+		}
+		
+		&.qodef--shower-rain,
+		&.qodef--heavy-intensity-rain {
+			
+			&:before {
+				content: "\e01b";
+			}
+		}
+
+		&.qodef--clouds,
+		&.qodef--broken-clouds,
+		&.qodef--overcast-clouds,
+		&.qodef--scattered-clouds,
+		&.qodef--few-clouds {
+			
+			&:before {
+				content: "\e042";
+			}
+		}
+
+		&.qodef--clear,
+		&.qodef--clear-sky,
+		&.qodef--sky-is-clear,
+		&.qodef--sun {
+			
+			&:before {
+				content: "\e038";
+			}
+		}
+	}
+	
+	.qodef-m-temperature {
+		margin-bottom: 3px;
+		color: $heading-color;
+		font-family: $additional-text-font;
+		font-size: 20px;
+		font-weight: 400;
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+		
+		sup {
+			font-size: inherit;
+			top: 0;
+		}
+	}
+	
+	.qodef-e-humidity,
+	.qodef-e-wind {
+		font-size: 15px;
+		line-height: 1;
+	}
+	
+	.qodef-m-other-days {
+		@include qodefCustomTextStyle();
+		flex-shrink: 0;
+		
+		.qodef-m-inner {
+			width: 100%;
+			margin: 17px 0;
+		}
+		
+		.qodef-m-weather-icon {
+			font-size: 22px;
+			letter-spacing: 0;
+			margin: 0 4px 0 0;
+			flex-shrink: 0;
+			min-width: 38px;
+			text-align: center;
+		}
+		
+		.qodef-m-temperature {
+			margin-bottom: 0;
+			font-size: 13px;
+			font-weight: 500;
+		}
+		
+		.qodef-m-day {
+			min-width: 40px;
+		}
+	}
+	
+	&.qodef-layout--standard {
+		
+		> .qodef-m-inner {
+			justify-content: space-between;
+		}
+		
+		@include qodefScreenSize680 {
+			
+			> .qodef-m-inner {
+				flex-direction: column;
+				align-items: inherit;
+			}
+			
+			.qodef-m-weather {
+				margin-bottom: 6px;
+			}
+		}
+	}
+	
+	&.qodef-layout--simple {
+		
+		.qodef-m-city {
+			margin: 0 10px 0 0;
+			font-size: 15px;
+			color: $heading-color;
+		}
+		
+		.qodef-m-weather-icon {
+			font-size: 22px;
+			margin: 0 8px;
+		}
+		
+		.qodef-m-temperature {
+			margin-bottom: 0;
+			font-size: 13px;
+			font-weight: 500;
+		}
+	}
+}
+
+$wp-widgets-area-map: (
+	'.qodef-header--light:not(.qodef-header--sticky-display)':(
+		text-color: #fff,
+	),
+	'.qodef-sticky-header--light':(
+		text-color: #fff,
+	),
+	'#qodef-page-footer':(
+		text-color: #fff,
+	),
+);
+
+@each $key, $values in $wp-widgets-area-map {
+	$wp-widgets-area-map-merged: map-merge($wp-widgets-area-map, $values);
+	
+	#{$key} .qodef-weather-widget {
+		@if (map-get($values, 'text-color')) {
+			color: map-get($values, 'text-color');
+			
+			.qodef-m-temperature {
+				color: map-get($values, 'text-color');
+			}
+			
+			.qodef-m-other-days {
+				color: map-get($values, 'text-color');
+			}
+			
+			&.qodef-layout--simple {
+				
+				.qodef-m-city {
+					color: map-get($values, 'text-color');
+				}
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Weather Widget style - end
+   ========================================================================== */

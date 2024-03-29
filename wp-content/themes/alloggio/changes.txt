@@ -1,0 +1,129 @@
+1.8
+- Added compatibility with Qi Blocks plugin
+- Added option to disable Google Fonts in Alloggio Options -> General
+- Added alloggio_validate_pagination_data helper function
+- Added search widget compatibility
+- Added WooCommerce 7.5.0 compatibility
+- Updated Alloggio Core plugin to 1.2
+- Updated Qode Framework plugin to 1.2.1
+- Updated Revolution Slider to 6.6.11
+- Updated language files
+- Improved TGMPA functionality
+- Improved custom sidebar area functionality - added option to create and delete custom widget areas within block widgets editor
+- Improved Google Maps api with callback function
+- Improved Social Share functionality
+
+1.7.2
+- Updated Qode Framework plugin to 1.2
+- Updated Alloggio Core plugin to 1.1.3
+- Updated Revolution Slider plugin to 6.6.8
+- Updated language files
+- Improved checkout plugin and payment functionality
+- Improved Half Day Booking functionality
+- Improved Elementor compatibility
+- Improved PHP 8 compatibility
+- Fixed default and custom sticky widget area interaction
+
+1.7.1
+- Updated Qode Framework plugin to 1.1.6
+- Updated Alloggio Core plugin to 1.1.2
+- Updated Revolution Slider plugin to 6.5.8
+- Fixed issue with number of children in reservation
+- Fixed issue with Side Area Cart widget
+
+1.7
+- Added WordPress 5.8 compatibility
+- Updated Revolution Slider plugin to 6.5.7
+
+1.6.2
+- Updated Alloggio Core plugin to 1.1.1
+- Fixed the issue with wrong reservation data in room booking table when the same room is booked several times
+
+1.6.1
+- Added compatibility with Qi Addons for Elementor plugin
+
+1.6
+- Added Choose Slide Animation option for Slider shortcodes
+- Updated Alloggio Core plugin to 1.1
+- Updated Revolution Slider plugin to 6.4.11
+- Fixed custom class excluding for shortcodes
+- Improved theme registration to block Shortcodes and CPT loading if the theme is not registered
+- Removed license from style.css
+
+1.5
+- Added enable half day booking option for room single pages
+- Updated Alloggio Core plugin to 1.0.8
+- Updated Revolution Slider plugin to 6.4.8
+- Updated language files
+- Improved theme performance
+- Improved counter shortcode
+- Improved progress bar shortcode
+- Fixed minor bugs
+
+1.4.1
+- Updated Alloggio Core plugin to 1.0.7
+- Updated Qode Framework plugin to 1.1.5
+- Fixed price rounding issue in Room Reservation form
+- Fixed swiper script
+- Improved rooms check availability form
+- Improved room CPT extra services with per person per night case
+- Improved theme registration functionality
+
+1.4
+- Added WordPress 5.7 compatibility
+- Improved PHP 8 compatibility
+- Improved room reservation filter guests capacity
+- Updated Alloggio Core plugin to 1.0.6
+- Updated Alloggio Membership plugin to 1.0.2
+- Updated Revolution Slider plugin to 6.4.6
+- Updated Qode Framework plugin to 1.1.4
+- Updated Font Awesome pack to 5.15.2
+- Updated language files
+- Fixed room reservation functionality when WPML is installed
+- Fixed enable room availability option
+- Fixed minor bugs
+
+1.3
+- Added WordPress 5.5 compatibility
+- Updated Qode Framework plugin to 1.1.3
+- Updated Alloggio Core plugin to 1.0.5
+- Updated Revolution Slider plugin to 6.2.22
+- Updated language files
+- Fixed room reservation extra services translation
+- Fixed room booking functionality when room is removed from the cart
+
+1.2.1
+- Updated Alloggio Core plugin to 1.0.4
+- Updated Revolution Slider plugin to 6.2.17
+- Fixed room search page styles when rooms are not found
+- Fixed theme import icon
+- Fixed weather widget localization icons
+
+1.2
+- Added Room Single minimum nights meta option
+- Updated Alloggio Core plugin to 1.0.3
+- Updated Alloggio Membership plugin to 1.0.1
+- Updated language files
+- Improved room price calculation
+- Improved scrolling reservation form on the search page
+- Fixed Alloggio Core and Alloggio Membership translation
+
+1.1.1
+- Updated Alloggio Core plugin to 1.0.2
+- Updated Revolution Slider plugin to 6.2.12
+- Improved demo content import functionality
+- Removed unnecessary tag from WooCommerce side-area cart widgets
+- Fixed availability calendar selected day style
+
+1.1
+- Added Room Single Seasonal Pricing meta options
+- Added Alloggio Membership plugin
+- Added User Dashboard page template
+- Added Alloggio Login Opener widget
+- Updated Alloggio Core plugin to 1.0.1
+- Updated Revolution Slider plugin to 6.2.10
+- Updated language files
+- Improved reservation date fields for touch devices
+- Improved room booking functionality
+- Fixed custom font global option
+- Fixed minor bugs

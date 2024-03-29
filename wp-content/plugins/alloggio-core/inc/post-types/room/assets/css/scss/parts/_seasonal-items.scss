@@ -1,0 +1,69 @@
+/* ==========================================================================
+   Room Single part styles
+   ========================================================================== */
+
+.qodef-e-seasonal {
+    @include qodefRelativeLayout();
+    margin-top: 70px;
+    padding-top: 37px;
+    border-top: 1px solid $additional-border-color;
+}
+
+.qodef-e-seasonal-title {
+    margin: 0;
+}
+
+.qodef-e-seasonal-description {
+    margin: 11px 0 0;
+}
+
+.qodef-e-seasonal-items {
+    @include qodefRelativeLayout();
+    margin: 41px 0 0;
+    padding: 14px 40px;
+    background-color: $additional-background-color;
+    
+    .qodef-ei {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin: 20px 0;
+        line-height: 1;
+        
+        > * {
+            position: relative;
+            display: inline-flex;
+            flex-shrink: 0;
+        }
+    }
+    
+    .qodef-ei-date-begin {
+        
+        &:after {
+            margin: 0 5px;
+            content: '-';
+        }
+    }
+    
+    .qodef-ei-price {
+        flex-shrink: 0;
+    }
+    
+    .qodef-ei-price-label {
+        margin-right: 5px;
+    }
+    
+    .qodef-ei-price-value {
+        color: $main-color;
+    }
+    
+    .qodef-ei-line {
+        top: -4px;
+        flex-shrink: inherit;
+        width: calc(100% - 20px);
+        margin: 0 10px;
+        height: 1px;
+        background-color: rgba($main-color, .3);
+    }
+}

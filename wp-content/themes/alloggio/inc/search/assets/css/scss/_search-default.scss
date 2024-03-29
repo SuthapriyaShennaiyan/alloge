@@ -1,0 +1,76 @@
+/* ==========================================================================
+   Search styles
+   ========================================================================== */
+
+.qodef-search {
+	@include qodefRelativeLayout();
+	margin: 0 0 50px;
+	
+	.qodef-e-search-heading {
+		@include qodefRelativeLayout();
+		margin-bottom: 60px;
+	}
+	
+	.qodef-e-search-heading-title {
+		margin: 0 0 20px;
+	}
+	
+	.qodef-e-search-heading-label {
+		margin: 8px 0 0;
+	}
+	
+	.qodef-search-form {
+		
+		.qodef-search-form-field {
+			padding: 8px 40px 1px 3px;
+			margin: 0;
+			border: 0;
+			border-bottom: 1px solid $border-color;
+			
+			&:focus {
+				color: $heading-color;
+				background-color: transparent;
+			}
+		}
+		
+		.qodef-search-form-button {
+			@include qodefButtonSearchIconStyle($heading-color, $text-color);
+			padding-bottom: 8px;
+		}
+	}
+	
+	.qodef-search-form-inner {
+		@include qodefRelativeLayout();
+	}
+	
+	article {
+		margin-bottom: 30px;
+		
+		&:last-child {
+			margin-bottom: 0;
+		}
+		
+		.qodef-e-inner {
+			position: relative;
+			display: flex;
+			align-items: flex-start;
+			
+			> * {
+				width: 100%;
+			}
+			
+			.qodef-e-image {
+				flex-basis: 180px;
+				padding-right: 30px;
+			}
+			
+			.qodef-e-title {
+				margin: 0;
+			}
+			
+			.qodef-e-excerpt {
+				margin: 9px 0 0;
+			}
+		}
+	}
+}

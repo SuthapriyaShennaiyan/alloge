@@ -1,0 +1,78 @@
+/* ==========================================================================
+   Icon shortcode styles
+   ========================================================================== */
+//qodef-payment-icon
+.qodef-icon-holder {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	width: auto;
+	line-height: 1;
+	
+	&.qodef-payment-icon .qodef-icon{
+		color: #c5c0b1;
+		
+		&:hover {
+			color:$main-color;
+		}
+	}
+	
+	a {
+		display: block;
+	}
+	
+	.qodef-icon {
+		display: block;
+		line-height: inherit;
+		transition: $transition-timing;
+		
+		&:before {
+			display: block;
+			line-height: inherit;
+		}
+	}
+	
+	&.qodef-layout--circle,
+	&.qodef-layout--square {
+		width: 2em;
+		height: 2em;
+		line-height: 2em;
+		text-align: center;
+		color: #fff;
+		background-color: $main-color;
+		transition: $color-transition, $background-color-transition, $border-color-transition;
+		
+		a {
+			color: inherit;
+			transition: none;
+		}
+		
+		&:hover {
+			background-color: $heading-color;
+		}
+	}
+	
+	&.qodef-layout--circle {
+		border-radius: 50%;
+	}
+	
+	&.qodef-size--tiny {
+		font-size: 1.33333333em;
+	}
+	
+	&.qodef-size--small {
+		font-size: 2em;
+	}
+	
+	&.qodef-size--medium {
+		font-size: 3em;
+	}
+	
+	&.qodef-size--large {
+		font-size: 4em;;
+	}
+	
+	&.qodef-size--huge {
+		font-size: 5em;
+	}
+}

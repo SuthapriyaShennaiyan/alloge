@@ -1,0 +1,51 @@
+/* ==========================================================================
+   Blog styles
+   ========================================================================== */
+
+.qodef-blog {
+	
+	@include qodefScreenSize768 {
+		
+		.qodef-blog-item {
+			
+			.qodef-e-info {
+				
+				.qodef-e-info-right {
+					margin-top: 15px;
+				}
+				
+				&.qodef-info--bottom {
+					display: inline-block;
+				}
+			}
+			
+			&.format-link {
+				
+				.qodef-e-link {
+					padding-left: 104px;
+				}
+				
+				.qodef-e-mark {
+					width: 54px;
+					left: 30px;
+				}
+			}
+			
+			&.format-quote {
+			
+				.qodef-e-quote {
+					padding: 130px 40px 34px;
+				}
+				
+				.qodef-e-mark {
+					top: 40px;
+					height: auto;
+				}
+				
+				.qodef-e-quote-author {
+					margin-top: 22px;
+				}
+			}
+		}
+	}
+}

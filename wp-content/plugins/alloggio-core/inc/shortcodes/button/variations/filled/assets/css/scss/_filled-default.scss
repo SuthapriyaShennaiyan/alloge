@@ -1,0 +1,44 @@
+.qodef-button {
+
+    &.qodef-layout--filled {
+    
+        &.qodef-html--link {
+            @include qodefButtonFilledColor();
+    
+            .qodef-m-background-holder {
+                @include qodefButtonBackground($heading-color);
+            }
+    
+            &:hover {
+                @include qodefButtonFilledHoverColor();
+    
+                .qodef-m-background-holder {
+                    @include qodefButtonBackgroundHover();
+                }
+            }
+        }
+    }
+}
+
+.qodef-button-inverted-hover  {
+    .qodef-button.qodef-layout--filled.qodef-html--link {
+        border-color: #fff;
+        background-color: transparent;
+    
+        .qodef-m-background-holder {
+            transform: scaleX(1);
+            transform-origin: right;
+            background-color: $main-color;
+            right: -1px;
+            left: auto;
+        }
+    
+        &:hover {
+            color: #fff;
+            
+            .qodef-m-background-holder {
+                width: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+/* ==========================================================================
+   Room Profile Global responsive styles - begin
+   ========================================================================== */
+
+.qodef-profile-reserved-rooms {
+	
+	@include qodefScreenSize1024 {
+		
+		.qodef-m-reserved-room {
+			flex-wrap: wrap;
+			
+			.qodef-ei-image {
+				margin-bottom: 30px;
+			}
+			
+			.qodef-ei-order {
+				width: 100%;
+				margin-top: 20px;
+			}
+		}
+	}
+}

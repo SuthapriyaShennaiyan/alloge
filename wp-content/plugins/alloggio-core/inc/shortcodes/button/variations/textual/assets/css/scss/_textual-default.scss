@@ -1,0 +1,47 @@
+.qodef-button {
+    
+    &.qodef-layout--textual {
+        padding: 0 !important;
+        color: $heading-color;
+        background-color: transparent;
+        border: 0;
+
+        .qodef-m-text {
+            display: inline-block;
+            vertical-align: middle;
+        }
+    
+        .qodef-m-plus {
+            position: relative;
+            top: -1px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 7px;
+            height: 7px;
+            vertical-align: middle;
+            margin-left: 4px;
+            
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+                background-color: currentColor;
+            }
+            
+            &:before {
+                height: 1px;
+                width: 100%;
+            }
+    
+            &:after {
+                height: 100%;
+                width: 1px;
+            }
+        }
+
+        &:hover {
+            color: $main-color;
+        }
+    }
+}

@@ -1,0 +1,306 @@
+/* ==========================================================================
+   Pagination global styles
+   ========================================================================== */
+
+.qodef-m-pagination {
+    @include qodefRelativeLayout();
+    margin: 0;
+
+    &.qodef--wp {
+	    margin: 38px 0 0;
+
+        .nav-links {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .page-numbers {
+            position: relative;
+            margin: 0 13px;
+            padding: 6px;
+
+            * {
+                display: block;
+                line-height: inherit;
+            }
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &.dots {
+
+                &:after {
+                    display: none;
+                }
+            }
+
+            &.prev,
+            &.next {
+                top: -1px;
+    
+                svg {
+                    display: block;
+                    width: 7px;
+                    fill: none;
+                    stroke: currentColor;
+                    stroke-width: 1.2;
+                    stroke-linecap: round;
+                    stroke-linejoin: round;
+                    stroke-miterlimit: 10;
+                }
+
+                body:not([class*="alloggio-core"]) & {
+                    top: 0;
+                    font-size: 17px;
+                }
+            }
+
+            &.prev {
+                margin-right: 15px;
+            }
+
+            &.next {
+                margin-left: 15px;
+            }
+    
+            &:hover,
+            &.current {
+                color: $main-color;
+            }
+        }
+    }
+
+    &.qodef--standard {
+	    margin: 68px 0 0;
+
+        .qodef-m-pagination-items {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .qodef-m-pagination-item {
+            position: relative;
+            margin: 0 13px;
+            padding: 6px;
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &.qodef--number-1 {
+                margin-left: 0;
+            }
+
+            &.dots {
+
+                &:after {
+                    display: none;
+                }
+            }
+
+            &.qodef--prev,
+            &.qodef--next {
+                position: relative;
+                top: -1px;
+                line-height: 1;
+	            
+	            a {
+		            display: block;
+		
+		            svg {
+                        display: block;
+                        width: 7px;
+                        fill: none;
+                        stroke: currentColor;
+                        stroke-width: 1.2;
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                        stroke-miterlimit: 10;
+                    }
+	            }
+
+                body:not([class*="alloggio-core"]) & {
+                    top: 0;
+                    font-size: 17px;
+                }
+            }
+    
+            &.qodef--prev {
+                margin-right: 26px;
+            }
+    
+            &.qodef--next {
+                margin-left: 13px;
+            }
+
+            &:hover,
+            &.qodef--active {
+                color: $main-color;
+            }
+        }
+    }
+
+    &.qodef--load-more {
+        text-align: center;
+
+        .qodef-m-pagination-inner {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .qodef-load-more-button {
+            opacity: 1;
+        }
+    }
+
+    &.qodef--infinite-scroll {
+        text-align: center;
+
+        .qodef-infinite-scroll-spinner {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            font-size: 32px;
+            line-height: 1;
+            color: $main-color;
+            opacity: 0;
+            z-index: -1;
+            transition: $opacity-transition;
+
+            &:before {
+                display: block;
+                line-height: inherit;
+            }
+        }
+    }
+}
+
+.qodef-pagination--on {
+
+    &.qodef-pagination-type--standard {
+
+        .qodef-grid-inner {
+            opacity: 1;
+            transition: $opacity-transition;
+        }
+
+        &.qodef--loading {
+
+            .qodef-grid-inner {
+                opacity: 0;
+            }
+        }
+    }
+
+    &.qodef-pagination-type--load-more {
+
+        .qodef-loading-spinner {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            bottom: 35px;
+            left: calc(50% - 30px);
+            font-size: 32px;
+            line-height: 1;
+            color: $main-color;
+            opacity: 0;
+            z-index: -1;
+            transition: $opacity-transition;
+            
+            fill: none;
+            
+            circle {
+                display: block;
+                fill: transparent;
+                stroke-linecap: round;
+                stroke-width: 2;
+        
+                &:first-of-type {
+                    stroke: #ded7d2;
+                }
+        
+                &:last-of-type {
+                    stroke: $main-color;
+                    stroke-dasharray: 283;
+                    stroke-dashoffset: 283;
+                    transform-origin: 50% 50%;
+                    transform: rotate(-180deg);
+                    animation: 1.7s ease-in-out infinite both qodef-circle-animation;
+                }
+            }
+
+            &:before {
+                display: block;
+                line-height: inherit;
+            }
+        }
+
+        &.qodef--loading {
+
+            .qodef-loading-spinner {
+                opacity: 1;
+                z-index: 1;
+            }
+
+            .qodef-load-more-button {
+                opacity: 0;
+            }
+        }
+    }
+
+    &.qodef-pagination-type--infinite-scroll {
+
+        &.qodef--loading {
+
+            .qodef-infinite-scroll-spinner {
+                opacity: 1;
+                z-index: 1;
+            }
+        }
+    }
+}
+
+.qodef-single-links {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    width: 100%;
+    margin: 15px 0;
+
+    .qodef-m-single-links-title {
+        @include qodefH7Style();
+        margin-right: 10px;
+    }
+
+    a,
+    > span:not(.qodef-m-single-links-title) {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 8px;
+        padding: 0 3px;
+        color: $heading-color;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    > span:not(.qodef-m-single-links-title) {
+        color: $main-color;
+    }
+}

@@ -1,0 +1,59 @@
+/* ==========================================================================
+   Single Post Navigation styles
+   ========================================================================== */
+
+#qodef-single-post-navigation {
+	@include qodefRelativeLayout();
+	margin: 62px 0 0;
+	
+	.qodef-m-inner {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-bottom: 6px;
+	}
+	
+	.qodef-m-nav {
+		position: relative;
+		display: flex;
+		align-items: center;
+		
+		> * {
+			display: block;
+			line-height: inherit;
+		}
+		
+		&.qodef--prev {
+			left: 0;
+			
+			.qodef-icon-elegant-icons {
+				margin-right: 4px;
+			}
+		}
+		
+		&.qodef--next {
+			right: 0;
+			margin-left: auto;
+			text-align: right;
+			
+			.qodef-icon-elegant-icons {
+				margin-left: 4px;
+			}
+		}
+	}
+	
+	.qodef-icon-elegant-icons {
+		font-size: 30px;
+	}
+	
+	.qodef-m-nav-label {
+		@include qodefCustomTextStyle(null);
+		margin-right: 10px;
+	}
+	
+	.qodef-m-nav-icon {
+		padding-bottom: 1px;
+		font-size: 20px;
+	}
+}

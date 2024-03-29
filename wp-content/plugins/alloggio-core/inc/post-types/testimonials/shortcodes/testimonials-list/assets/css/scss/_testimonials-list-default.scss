@@ -1,0 +1,201 @@
+/* ==========================================================================
+   Testimonials list shortcode styles
+   ========================================================================== */
+
+.qodef-testimonials-list-wrapper {
+	position: relative;
+	
+	> .swiper-button-next,
+	> .swiper-button-prev {
+		margin-top: -25px !important;
+	}
+}
+
+.qodef-testimonials-list {
+	
+	&.qodef-swiper-container {
+		cursor: grab;
+	}
+	
+	.qodef-e-inner {
+		padding-bottom: 40px;
+	}
+	
+	.qodef-e-media-image {
+		width: 65px;
+		margin-bottom: 21px;
+		line-height: 0;
+		
+		img {
+			border-radius: 100%;
+			box-sizing: border-box;
+		}
+	}
+	
+	.qodef-e-title {
+		position: relative;
+		margin: 0 0 23px;
+		z-index: 2;
+	}
+	
+	.qodef-e-text {
+		margin: 0 0 42px;
+		font-size: 21px;
+		line-height: 1.476190476190476em;
+	}
+	
+	.qodef-e-author {
+		margin: 0;
+		
+		.qodef-e-author-name {
+			color: $main-color;
+		}
+		
+		> * {
+			display: block;
+		}
+	}
+	
+	.qodef-e-mark {
+		position: absolute;
+		top: -45px;
+		left: calc(50% - 47px);
+		display: block;
+		color: #fff;
+		z-index: 1;
+		
+		svg {
+			display: block;
+			width: 95px;
+			fill: currentColor;
+			stroke: none;
+		}
+	}
+	
+	&.qodef-swiper-container {
+		
+		.qodef-e-inner {
+			padding-bottom: 0;
+		}
+		
+		/*.swiper-slide {
+			opacity: 0;
+			transition: opacity .4s ease-out;
+			
+			&.swiper-slide-visible,
+			&.swiper-slide-duplicate-active{
+				opacity: 1;
+				transition: opacity .4s ease-out .1s;
+			}
+		}*/
+		
+		&.qodef-col-num--1 {
+			.swiper-slide {
+				opacity: 0;
+				transition: opacity .25s ease-out;
+				
+				&.swiper-slide-visible,
+				&.swiper-slide-duplicate-active{
+					opacity: 1;
+					transition: opacity .4s ease-out .2s;
+				}
+			}
+			
+			.qodef-e-content {
+				padding: 0 15%;
+				
+				@include qodefScreenSize680 {
+					padding: 0 30px;
+				}
+			}
+		}
+	}
+	
+	&.qodef-content-position--center {
+		text-align: center;
+		
+		.qodef-e-media-image {
+			margin-right: auto;
+			margin-left: auto;
+		}
+		
+		.qodef-e-title {
+			margin-bottom: 8px;
+		}
+		
+		.qodef-e-text {
+			margin-bottom: 9px;
+		}
+	}
+	
+	&.qodef-icon-behind--title {
+		padding-top: 25px;
+	}
+	
+	&.qodef-icon-behind--text {
+		
+		.qodef-e-title {
+			margin-bottom: 30px;
+		}
+		
+		.qodef-e-text {
+			position: relative;
+			margin-bottom: 30px;
+			z-index: 1;
+		}
+		
+		.qodef-e-mark {
+			top: 25px;
+			z-index: -1;
+		}
+		
+		&.qodef-skin--light {
+			
+			.qodef-e-mark {
+				color: #302b26;
+			}
+		}
+	}
+	
+	&.qodef-content-position--right {
+		text-align: right;
+	}
+	
+	&.qodef-skin--light {
+		
+		.qodef-e-title {
+			color: #fff;
+		}
+		
+		.qodef-e-text {
+			color: #b8b8b8;
+		}
+		
+		.swiper-button-prev,
+		.swiper-button-next {
+			color: #fff;
+			
+			&:hover {
+				color: rgba(#fff, .4);
+			}
+		}
+		
+		.swiper-pagination-bullet {
+			
+			&:before {
+				background-color: #fff;
+			}
+		}
+	}
+	
+	@include qodefScreenSize680 {
+		
+		.swiper-button-prev {
+			left: 0 !important;
+		}
+		
+		.swiper-button-next {
+			right: 0 !important;
+		}
+	}
+}

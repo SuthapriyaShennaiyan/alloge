@@ -1,0 +1,224 @@
+/* ==========================================================================
+   Room list shortcode styles
+   ========================================================================== */
+
+.qodef-room-list {
+	
+	&:not(.qodef-layout--gallery, .qodef-layout--boxed){
+		.qodef-e-media-image {
+			overflow: hidden;
+			
+			img {
+				will-change: transform;
+				@include qodefMoveImageInitial();
+			}
+			
+			&:hover {
+				img {
+					@include qodefMoveImageHover();
+				}
+			}
+		}
+	}
+	
+	.qodef-e-inner {
+		@include qodefRelativeLayout();
+	}
+	
+	.qodef-e-media {
+		position: relative;
+		
+		a, img {
+			display: block;
+			width: 100%;
+		}
+		
+		.qodef-e-price {
+			position: absolute;
+			left: -18px;
+			bottom: 18px;
+			white-space: nowrap;
+			padding: 14px 20px;
+			z-index: 1;
+			
+			@include qodefLabelInitial();
+			
+			.qodef-e-price-label,
+			.qodef-e-price-value {
+				transform: translateX(0px) translateZ(0px);
+				transition: .35s $custom-transition-timing;
+			}
+			
+			
+			&:hover {
+				@include qodefLabelHover();
+				
+				.qodef-e-price-label,
+				.qodef-e-price-value {
+					transform: translateX(5px) translateZ(0px);
+				}
+			}
+		}
+		
+		.qodef-e-price-label {
+			color: $main-color;
+		}
+		
+		.qodef-e-price-value {
+			position: relative;
+			top: -3px;
+			font-family: $heading-font;
+			font-size: 25px;
+		}
+	}
+	
+	.qodef-e-price {
+		display: flex;
+		align-items: center;
+	}
+	
+	.qodef-e-price-label {
+		margin-right: 8px;
+	}
+	
+	.qodef-e-price-value {
+		color: $heading-color;
+	}
+	
+	.qodef-e-title {
+		margin: 0;
+		
+		a {
+			position: relative;
+			z-index: 1;
+		}
+	}
+	
+	.qodef-e-excerpt {
+		margin: 20px 0 0;
+	}
+	
+	.qodef-e-button {
+		margin-top: 20px;
+	}
+	
+	.qodef-e-info-items {
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: 5px;
+		
+		> * {
+			
+			&:not(:last-child) {
+				margin-right: 5px;
+				
+				&:after {
+					content: '/';
+					margin-left: 4px;
+				}
+			}
+		}
+	}
+	
+	.qodef-e-amenity-items {
+		position: relative;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		margin: 0 -10px;
+		
+		.qodef-e-amenity-item {
+			position: relative;
+			padding: 5px 10px;
+			margin-bottom: 5px;
+		}
+		
+		.qodef-ei-link {
+			position: relative;
+			display: inline-flex;
+			align-items: center;
+			color: $main-color;
+		}
+		
+		.qodef-ei-svg {
+			flex-shrink: 0;
+			
+			svg {
+				display: block;
+				max-width: 30px;
+				
+				* {
+					fill: none;
+					stroke: currentColor;
+				}
+			}
+		}
+		
+		.qodef-ei-svg-icon {
+			stroke: currentColor;
+			stroke-linecap: round;
+			stroke-miterlimit: 10;
+			fill: none;
+		}
+	}
+	
+	.qodef-e-link {
+		@include qodefAbsoluteLayout();
+	}
+	
+	.qodef-m-pagination {
+		
+		&.qodef--load-more {
+			margin: 10px 0 40px;
+		}
+	}
+	
+	&:not(.qodef-col-num--1) {
+		
+		.swiper-button-prev {
+			left: 20px !important;
+		}
+		
+		.swiper-button-next {
+			right: 20px !important;
+		}
+	}
+	
+	&.qodef--simple-slider {
+		
+		.swiper-button-next,
+		.swiper-button-prev {
+			color: #fff;
+			
+			&:hover {
+				color: rgba(#fff, .4);
+			}
+		}
+	}
+	
+	/*&.qodef--swiper-reveal {
+		.swiper-slide {
+			
+			&.swiper-slide-active {
+				z-index: 3;
+			}
+			
+			&.swiper-slide-prev {
+				z-index: 2;
+			}
+		}
+		
+		&.qodef-layout--gallery.qodef-visible-info {
+			.qodef-e-content {
+				opacity: 0;
+			}
+			
+			.swiper-slide-active {
+				.qodef-e-content {
+					animation: qode-fade-in .6s ease-out .25s forwards;
+				}
+			}
+		}
+	}*/
+}

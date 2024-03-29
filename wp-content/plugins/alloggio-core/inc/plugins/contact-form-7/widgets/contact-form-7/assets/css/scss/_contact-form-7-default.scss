@@ -1,0 +1,175 @@
+/* ==========================================================================
+   Contact Form 7 widget styles
+   ========================================================================== */
+
+.qodef-contact-form-7 {
+	@include qodefRelativeLayout();
+	
+	button.qodef-type--outlined {
+		&:before {
+			content: '';
+			display: block;
+			@include qodefButtonBackground();
+		}
+		
+		&:hover {
+			&:before {
+				@include qodefButtonBackgroundHover();
+			}
+		}
+	}
+	
+	.ajax-loader {
+		position: absolute;
+		right: -10px;
+	}
+	
+	label {
+		@include qodefCustomTextStyle($color: $heading-color, $line-height: 2.8em);
+		margin-bottom: 0;
+	}
+	
+	input[type=email],
+	input[type=number],
+	input[type=password],
+	input[type=search],
+	input[type=tel],
+	input[type=text],
+	input[type=url],
+	textarea,
+	p {
+		margin: 0;
+	}
+	
+	div.wpcf7-response-output {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	
+	.qodef-newsletter-form-style {
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+		flex-wrap: wrap;
+		
+		.qodef-e-title {
+			position: relative;
+			margin: 0 25px 0 0;
+			top: 6px;
+			
+			@media only screen and (max-width: 1368px) {
+				
+				.qodef-header--vertical & {
+					margin: 0 0 30px;
+				}
+			}
+			
+			@include qodefScreenSize1024 {
+				margin: 0 0 30px;
+			}
+		}
+		
+		.qodef-e-icon {
+			position: relative;
+			margin-right: 20px;
+			top: 5px;
+		}
+		
+		.wpcf7-form-control-wrap {
+			display: inline-block;
+			vertical-align: bottom;
+			max-width: 353px;
+			padding-right: 30px;
+		}
+		
+		input {
+			border: 0;
+			padding: 0;
+			border-bottom: 1px solid $border-color;
+		}
+		
+		button[type=submit] {
+			position: relative;
+			top: 2px;
+			
+			@include qodefScreenSize680 {
+				margin: 20px 0 0;
+			}
+		}
+		
+		span.wpcf7-not-valid-tip {
+			position: absolute;
+		}
+		
+		.ajax-loader.is-active {
+			position: relative;
+		}
+		
+		&.qodef-skin--light {
+			
+			.qodef-e-icon {
+				color: $main-color;
+			}
+			
+			.qodef-e-title {
+				color: #fff;
+			}
+			
+			input {
+				color: #b8b8b8;
+				border-color: rgba(#b8b8b8, .62);
+			}
+			
+			button[type=submit] {
+				color: #fff;
+				border-color: #fff;
+				background-color: transparent;
+				
+				&:before {
+					transform: scaleX(1);
+					transform-origin: right;
+					background-color: $main-color;
+				}
+				
+				&:hover {
+					color: #fff;
+					
+					&:before {
+						transform: scaleX(0) translateX(1px);
+						transform-origin: right;
+					}
+				}
+			}
+		}
+	}
+	
+	.qodef-newsletter-vertical-form-style {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+		
+		.qodef-e-title {
+			margin: 0 0 14px;
+		}
+		
+		.qodef-e-icon {
+			display: block;
+			margin-bottom: 7px;
+		}
+		
+		.qodef-e-text {
+			margin-bottom: 64px;
+		}
+		
+		input {
+			border: 0;
+			padding: 0;
+			border-bottom: 1px solid $border-color;
+		}
+		
+		button.wpcf7-submit {
+			margin-top: 35px;
+		}
+	}
+}

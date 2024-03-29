@@ -1,0 +1,254 @@
+/* ==========================================================================
+   Room Reservation Filter shortcode styles
+   ========================================================================== */
+
+.qodef-room-reservation-filter {
+	@include qodefRelativeLayout();
+	
+	.qodef-m-form {
+		
+		.qodef-m-field {
+			@include qodefRelativeLayout();
+			
+			label {
+				margin-bottom: 5px;
+				@include qodefCustomTextStyle();
+			}
+			
+			input,
+			select {
+				margin-bottom: 0;
+				
+				&:hover {
+					border-color: $heading-color;
+				}
+			}
+			
+			.select2-container--default {
+				margin-bottom: 0;
+				
+				.select2-selection--single {
+					
+					&:hover {
+						border-color: $heading-color;
+					}
+				}
+			}
+			
+			&.qodef--room-amount,
+			&.qodef--room-type {
+				
+				.qodef-e-input {
+					width: 100%;
+				}
+			}
+			
+			&.qodef--guests {
+				
+				.qodef-m-field-input-icon {
+					top: calc(50% - 10px);
+					width: 20px;
+				}
+				
+				.qodef-m-field-persons {
+					position: absolute;
+					top: 100%;
+					left: 0;
+					width: 100%;
+					display: block;
+					padding: 20px;
+					background-color: $additional-background-color;
+					border: 1px solid $border-color;
+					border-top-width: 0;
+					visibility: hidden;
+					z-index: -1;
+					opacity: 0;
+					transition: .35s ease-out;
+					
+					&.qodef--above {
+						top: auto;
+						bottom: calc(100% - 24px); // 24 is field label height + label margin bottom
+						border-top-width: 1px;
+						border-bottom-width: 0;
+					}
+					
+					&.qodef--opened {
+						visibility: visible;
+						z-index: 999;
+						opacity: 1;
+					}
+				}
+				
+				.qodef-m-field-person {
+					position: relative;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					margin-bottom: 20px;
+					
+					.qodef-e-input {
+						flex-shrink: 0;
+						width: 44px;
+					}
+					
+					.select2-container--default {
+						
+						.select2-selection--single {
+							height: auto;
+							padding: 3px 6px;
+							line-height: 22px;
+						}
+						
+						.select2-selection__arrow {
+							right: 2px;
+							width: 20px;
+							
+							&:before {
+								font-size: 10px;
+							}
+						}
+					}
+					
+					.qodef-e-label-text {
+						color: $heading-color;
+					}
+					
+					.qodef-e-label-description {
+						display: block;
+						font-size: 13px;
+						line-height: 1;
+					}
+					
+					&.qodef--button {
+						margin: 16px 0 0;
+						
+						.qodef-button {
+							padding-top: 7px;
+							padding-bottom: 7px;
+						}
+					}
+				}
+			}
+		}
+		
+		.qodef-m-field-title {
+			margin: 0;
+		}
+		
+		.qodef-m-field-input-wrapper {
+			@include qodefRelativeLayout();
+		}
+		
+		.qodef-m-field-input-icon {
+			position: absolute;
+			top: calc(50% - 8px);
+			right: 18px;
+			width: 16px;
+			height: auto;
+			fill: none;
+			stroke: $heading-color;
+			z-index: 1;
+			cursor: pointer;
+		}
+	}
+	
+	.qodef-m-spinner {
+		position: absolute;
+		top: calc(50% - 30px);
+		left: calc(50% - 30px);
+		width: 60px;
+		color: $main-color;
+		fill: currentColor;
+		animation: qode-rotate 2s infinite linear;
+		z-index: 2;
+	}
+	
+	&:after {
+		content: '';
+		@include qodefAbsoluteLayout();
+		background-color: rgba(#fff, .8);
+		z-index: 1;
+	}
+	
+	&.qodef--loaded {
+		
+		&:after {
+			display: none;
+		}
+		
+		.qodef-m-spinner {
+			display: none;
+		}
+	}
+	
+	&.qodef-skin--light {
+		
+		.qodef-m-title {
+			color: #fff;
+		}
+		
+		.qodef-m-form {
+			
+			.qodef-m-field {
+				
+				label {
+					color: #fff;
+				}
+				
+				input,
+				select {
+					color: #b8b8b8;
+					border-color: rgba(#7c7c7c, .29);
+					
+					&:hover {
+						border-color: #fff;
+					}
+				}
+				
+				> .select2-container--default {
+					
+					.select2-selection--single {
+						color: #b8b8b8;
+						border-color: rgba(#7c7c7c, .29);
+						
+						.select2-selection__arrow {
+							color: #b8b8b8;
+						}
+						
+						&:hover {
+							border-color: #fff;
+						}
+					}
+				}
+			}
+			
+			.qodef-m-field-input-icon {
+				stroke: #b8b8b8;
+			}
+			
+			.qodef--booking .qodef-button {
+				
+				&.qodef-layout--outlined {
+					color: #fff;
+					background-color: transparent;
+					border-color: #fff;
+					
+					.qodef-m-background-holder {
+						transform: scaleX(1);
+						transform-origin: right;
+					}
+					
+					&:hover {
+						color: #fff;
+						background-color: transparent;
+						
+						.qodef-m-background-holder {
+							transform: scaleX(0);
+							transform-origin: right;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,76 @@
+/* ==========================================================================
+   Room Gallery list shortcode styles
+   ========================================================================== */
+
+.qodef-restaurant-menu-info {
+	@include qodefRelativeLayout();
+	
+	.qodef-m-inner {
+		display: flex;
+		align-items: stretch;
+	}
+	
+	.qodef-m-content {
+		width: 40%;
+		display: inline-flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 144px 70px 150px;
+		text-align: right;
+		background-color: #f6f3ea;
+	}
+	
+	.qodef-m-media {
+		width: 60%;
+		
+		> * {
+			height: 100%;
+		}
+		
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	
+	.qodef-m-availability {
+		color: $main-color;
+	}
+	
+	.qodef-m-title {
+		margin: 0 0 27px;
+	}
+	
+	.qodef-e-item {
+		margin: 0 0 3px;
+		
+		&:last-child {
+			margin: 0;
+		}
+	}
+	
+	.qodef-e-title {
+		margin: 0;
+	}
+	
+	.qodef-m-download {
+		margin: 66px 0 0;
+		
+		.qodef-button {
+			&:before {
+				content: '';
+				display: block;
+				@include qodefButtonBackground();
+			}
+			
+			&:hover {
+				&:before {
+					@include qodefButtonBackgroundHover();
+				}
+			}
+		}
+		
+	}
+}

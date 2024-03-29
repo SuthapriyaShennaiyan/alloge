@@ -1,0 +1,42 @@
+/* ==========================================================================
+   Room Gallery list shortcode responsive styles
+   ========================================================================== */
+
+.qodef-restaurant-menu-info {
+	
+	@include qodefScreenSize1024 {
+		
+		.qodef-m-content {
+			padding: 94px 45px 100px;
+		}
+	}
+	
+	@include qodefScreenSize768 {
+		
+		.qodef-m-inner {
+			flex-direction: column;
+			
+			> * {
+				width: 100%;
+			}
+		}
+		
+		.qodef-m-content {
+			text-align: inherit;
+		}
+		
+		.qodef-m-media {
+			
+			> * {
+				height: auto;
+			}
+		}
+	}
+	
+	@include qodefScreenSize680 {
+		
+		.qodef-m-content {
+			padding: 44px 28px 50px;
+		}
+	}
+}

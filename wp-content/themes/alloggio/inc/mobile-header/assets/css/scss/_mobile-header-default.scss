@@ -1,0 +1,177 @@
+/* ==========================================================================
+   Mobile Header styles
+   ========================================================================== */
+$header-height: 70px;
+$menu-top-bottom-spacing: 34px;
+
+#qodef-page-mobile-header {
+    position: relative;
+    display: none;
+    height: $header-height;
+    z-index: 100; // to be on top of content, if content has negative margin
+
+    .qodef-mobile-header-logo-link {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 38px;
+        max-height: 100%;
+
+        img {
+            display: block;
+            margin: auto;
+            width: auto;
+            max-height: 100%;
+            transition: opacity 0.3s ease;
+        }
+    }
+}
+
+#qodef-page-mobile-header-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: $full-width-side-padding;
+}
+
+.qodef-mobile-header-opener {
+    font-size: 20px;
+    margin-left: 20px;
+    
+    svg {
+        
+        &.qodef--initial {
+            display: block;
+            width: 32px;
+            height: auto;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-miterlimit: 10;
+        }
+    }
+}
+
+.qodef-mobile-header-navigation {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    width: 100%;
+    max-height: calc(100vh - #{$header-height});
+    background-color: #faf9f5;
+    padding: 0;
+    margin: 0;
+    overflow-y: scroll;
+    z-index: 10; // to allowed dropdown over content
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+            position: relative;
+            margin: 0;
+            padding: 0;
+
+            ul {
+                display: none;
+            }
+
+            &.menu-item-has-children {
+
+                > a {
+
+                    &:after {
+                        font-family: 'Linearicons-Free';
+                        content: '\e876';
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        font-size: 12px;
+                        line-height: inherit;
+                        transform-origin: 50% 50%;
+                        transition: transform $transition-timing;
+
+                        // fallback when core plugin is not activated
+                        body:not([class*="alloggio-core"]) & {
+                            top: 7px;
+                            width: 6px;
+                            height: 6px;
+                            font-size: 0;
+                            border-width: 0 1px 1px 0;
+                            border-style: solid;
+                            border-color: currentColor;
+                            transform: rotate(-45deg);
+                        }
+                    }
+                }
+
+                &.qodef--opened {
+
+                    > a {
+
+                        &:after {
+                            transform: rotate(90deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    > ul {
+        margin: 0 auto;
+        padding: $menu-top-bottom-spacing 0;
+
+        > li {
+
+            > a {
+                @include qodefMenuLevelOneInitialStyle();
+
+                &:hover {
+                    @include qodefMenuLevelOneHoverStyle();
+                }
+            }
+
+            &.current-menu-ancestor,
+            &.current-menu-item {
+
+                > a {
+                    @include qodefMenuLevelOneHoverStyle();
+                }
+            }
+        }
+    }
+
+    ul.sub-menu {
+        margin-left: 10px;
+        
+        li {
+
+            > a {
+                @include qodefMenuLevelTwoInitialStyle();
+                @include qodefMenuLevelTwoInitialTypographyStyle();
+
+                &:hover {
+                    @include qodefMenuLevelTwoHoverStyle();
+                }
+            }
+
+            &.current-menu-ancestor,
+            &.current-menu-item {
+
+                > a {
+                    @include qodefMenuLevelTwoHoverStyle();
+                }
+            }
+        }
+        
+        ul {
+            margin-left: 20px;
+        }
+    }
+}

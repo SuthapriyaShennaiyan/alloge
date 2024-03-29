@@ -1,0 +1,71 @@
+/* ==========================================================================
+   #Back to Top styles - start
+   ========================================================================== */
+
+#qodef-back-to-top {
+	position: fixed;
+	width: 40px;
+	height: 40px;
+	right: 25px;
+	bottom: 25px;
+	margin: 0;
+	opacity: 0;
+	visibility: hidden;
+	z-index: 10000;
+	
+	.qodef-back-to-top-icon {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		font-size: 16px;
+		color: $main-color;
+		background-color: transparent;
+		border: 1px solid $main-color;
+		overflow: hidden;
+		transition: $color-transition, $background-color-transition, $border-color-transition;
+		transition-delay: .1s;
+		
+		* {
+			display: block;
+			line-height: inherit;
+			z-index: 1;
+			
+		}
+		
+		&:before {
+			content: '';
+			display: block;
+			@include qodefButtonBackground($main-color, .3s);
+		}
+	}
+	
+	&:hover {
+		
+		.qodef-back-to-top-icon {
+			color: #fff;
+			/*background-color: $main-color;*/
+			
+			&:before {
+				@include qodefButtonBackgroundHover();
+			}
+		}
+	}
+	
+	&.qodef--off {
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.15s ease, visibility .0s .15s;
+	}
+	
+	&.qodef--on {
+		opacity: 1;
+		visibility: visible;
+		transition: opacity 0.3s ease;
+	}
+}
+
+/* ==========================================================================
+   #Back to Top styles - end
+   ========================================================================== */

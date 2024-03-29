@@ -1,0 +1,35 @@
+/* ==========================================================================
+   Room general styles
+   ========================================================================== */
+
+#qodef-room-sticky-widget {
+    position: relative;
+    width: 100%;
+    height: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+.archive {
+    
+    .qodef-grid.qodef-layout--template {
+    
+        &.qodef-gutter--huge {
+    
+            > .qodef-grid-inner {
+                
+                .qodef-page-content-section {
+                    
+                    @media only screen and (min-width: $screen-size-1025) {
+                        margin-bottom: 0;
+                    }
+                }
+    
+                .qodef-page-sidebar-section {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}

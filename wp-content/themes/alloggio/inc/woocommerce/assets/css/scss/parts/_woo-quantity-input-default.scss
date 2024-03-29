@@ -1,0 +1,90 @@
+/* ==========================================================================
+   WooCommerce quantity input styles
+   ========================================================================== */
+
+#qodef-woo-page {
+	
+	.qodef-quantity-buttons {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		
+		.qodef-quantity-input,
+		.qodef-quantity-minus,
+		.qodef-quantity-plus {
+			display: inline-block;
+			vertical-align: middle;
+			font-size: inherit;
+			font-family: inherit;
+			font-weight: inherit;
+			text-align: center;
+			user-select: none;
+			color: $heading-color;
+			background-color: $additional-background-color;
+		}
+		
+		.qodef-quantity-input {
+			position: relative;
+			height: 50px;
+			width: 50px;
+			padding: 0;
+			margin: 0 25px 0 0;
+			font-family: inherit;
+			line-height: 48px;
+			outline: 0;
+			border: 1px solid $border-color;
+		}
+		
+		.qodef-quantity-minus,
+		.qodef-quantity-plus {
+			position: absolute;
+			right: 0;
+			width: 25px;
+			height: 25px;
+			display: block;
+			font-size: 0;
+			line-height: 1;
+			border: 1px solid $border-color;
+			border-left: 0;
+			cursor: pointer;
+			transition: $color-transition;
+			
+			&:before {
+				display: block;
+				font-family: "linea-arrows-10"!important;
+				font-size: 23px;
+				line-height: 1em;
+			}
+			
+			&:hover {
+				color: $main-color;
+			}
+		}
+		
+		.qodef-quantity-plus {
+			top: 0;
+			border-bottom: 0;
+			
+			&:before {
+				content: "\e048";
+				
+				body:not([class*="alloggio-core"]) & {
+					content: '+';
+				}
+			}
+		}
+		
+		.qodef-quantity-minus {
+			bottom: 0;
+			
+			&:before {
+				font-size: 24px;
+				content: "\e041";
+				
+				body:not([class*="alloggio-core"]) & {
+					content: '-';
+				}
+			}
+		}
+	}
+}

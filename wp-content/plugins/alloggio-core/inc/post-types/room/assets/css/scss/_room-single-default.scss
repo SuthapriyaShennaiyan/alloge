@@ -1,0 +1,104 @@
+/* ==========================================================================
+   Room Single styles
+   ========================================================================== */
+
+.single-room {
+    
+    #qodef-page-inner {
+        padding-top: 0;
+    }
+    
+    .woocommerce-message,
+    .woocommerce-info,
+    .woocommerce-error {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        padding: 20px 30px;
+        margin: 50px 0 20px;
+        border: 1px solid $border-color;
+    
+        a {
+            margin-top: 12px;
+        }
+    }
+    
+    .woocommerce-info {
+        border-color: #0b9c0b;
+    }
+    
+    .woocommerce-error {
+        border-color: #ff3135;
+    }
+    
+    .datepick-popup .datepick {
+        border-top: 0;
+    }
+}
+
+.qodef-room {
+    @include qodefRelativeLayout();
+    margin-bottom: 20px;
+    
+    .qodef-m-slider {
+        width: 100%;
+        margin-bottom: 70px;
+        
+        .swiper-slide {
+            width: auto;
+            
+            img {
+                width: auto;
+            }
+        }
+        
+        &.qodef-skin--light {
+    
+            .swiper-button-prev,
+            .swiper-button-next {
+                color: #fff;
+                
+                &:hover {
+                    color: rgba(#fff, .4);
+                }
+            }
+        }
+    }
+    
+    .qodef-m-image {
+        width: 100%;
+        margin-bottom: 70px;
+    
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+    
+    .qodef-m-content {
+        display: block;
+    }
+    
+    .qodef-room-item {
+        @include qodefRelativeLayout();
+    }
+    
+    .qodef-e-title {
+        margin: 0;
+    }
+    
+    .qodef-e-content {
+        margin-top: 22px;
+    }
+    
+    @import 'parts/amenity';
+    @import 'parts/additional-info-items';
+    @import 'parts/availability-calendar';
+    @import 'parts/seasonal-items';
+    @import 'parts/location';
+}
+
+@import 'parts/calendar';
+@import 'parts/reservation-form';
+@import 'parts/weather';
+@import 'parts/ads';

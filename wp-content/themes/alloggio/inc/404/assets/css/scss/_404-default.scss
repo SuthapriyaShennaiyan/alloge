@@ -1,0 +1,48 @@
+/* ==========================================================================
+   404 page styles
+   ========================================================================== */
+
+.error404 {
+	
+	#qodef-page-inner {
+		padding: 0;
+	}
+}
+
+#qodef-404-page {
+	@include qodefRelativeLayout();
+	padding: 375px 10% 207px;
+	text-align: center;
+	
+	.qodef-404-watermark {
+		position: absolute;
+		top: calc(50% - 185px);
+		left: 0;
+		display: block;
+		width: 100%;
+		font-size: 320px;
+		line-height: 1;
+		color: rgba(#e8e3d6, .52);
+		z-index: -1;
+	}
+	
+	.qodef-404-title {
+		margin: 0;
+	}
+	
+	.qodef-404-text {
+		display: block;
+		margin: 23px auto 5px;
+		
+		@media only screen and (min-width: $screen-size-1025) {
+			max-width: 60%;
+		}
+	}
+	
+	.qodef-404-button {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		margin-top: 24px;
+	}
+}

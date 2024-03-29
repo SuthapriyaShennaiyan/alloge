@@ -1,0 +1,51 @@
+/* ==========================================================================
+   #Footer styles - start
+   ========================================================================== */
+
+.qodef-page-footer--uncover {
+	
+	#qodef-page-outer {
+		z-index: 90; // needs to be larger than the footer and lower than the header
+	}
+	
+	#qodef-page-footer {
+		
+		.no-touchevents & {
+			position: fixed;
+			bottom: 0;
+			left: 0;
+		}
+	}
+}
+
+#qodef-page-footer-top-area {
+	
+	.qodef-grid-item {
+		
+		&.qodef-col--40 {
+			
+			.textwidget {
+				max-width: 87%;
+				
+				@include qodefScreenSize680 {
+					max-width: 100%;
+				}
+			}
+		}
+		
+		&.qodef--1024-col-6 {
+			
+			@include qodefScreenSize1024 {
+				margin-bottom: 45px;
+				
+				&:nth-child(2n+1) {
+					clear: both;
+				}
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   #Footer styles - end
+   ========================================================================== */

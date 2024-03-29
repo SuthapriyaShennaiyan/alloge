@@ -1,0 +1,78 @@
+/* ==========================================================================
+   Header layout styles
+   ========================================================================== */
+
+$left-right-spacing: 21px; // Same size needs to be as in alloggio-core/inc/header/assets/css/scss/_common-default.scss
+
+.qodef-header--divided {
+
+	#qodef-page-header {
+
+		.qodef-divided-header-left-wrapper,
+		.qodef-divided-header-right-wrapper {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			position: relative;
+		}
+
+		.qodef-divided-header-left-wrapper {
+			justify-content: flex-end;
+			
+			.qodef-widget-holder {
+				left: 0;
+			}
+		}
+		
+		.qodef-divided-header-right-wrapper {
+			.qodef-widget-holder {
+				right: 0;
+			}
+		}
+		
+		.qodef-header-logo-link {
+			justify-content: center;
+		}
+		
+		.qodef-header-navigation {
+			margin: 0 $left-right-spacing * 2;
+		}
+		
+		.qodef-widget-holder {
+			margin-left: 0;
+			position: absolute;
+			
+			.widget {
+				
+				&.widget_custom_html {
+					height: 100%;
+					
+					> * {
+						height: 100%;
+					}
+				}
+				
+				&.widget_icl_lang_sel_widget {
+					height: 100%;
+					
+					.wpml-ls-legacy-dropdown,
+					.wpml-ls-legacy-dropdown-click {
+						height: 100%;
+						display: flex;
+						align-items: center;
+						
+						.wpml-ls-item-toggle {
+							height: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	#qodef-page-header-inner {
+		align-items: stretch;
+		justify-content: center;
+	}
+}

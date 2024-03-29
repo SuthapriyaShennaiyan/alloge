@@ -1,0 +1,23 @@
+/* ==========================================================================
+   Footer responsive styles
+   ========================================================================== */
+
+#qodef-page-footer-top-area {
+	
+	.qodef-content-full-width {
+		
+		@include qodefScreenSize1024 {
+			padding: $full-width-side-padding;
+		}
+	}
+}
+
+#qodef-page-footer-bottom-area {
+	
+	.qodef-content-full-width {
+		
+		@include qodefScreenSize1024 {
+			padding: $full-width-side-padding;
+		}
+	}
+}

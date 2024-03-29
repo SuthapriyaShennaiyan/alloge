@@ -1,0 +1,14 @@
+/* ==========================================================================
+   Room Single part styles
+   ========================================================================== */
+
+#qodef-room-weather {
+	@include qodefRelativeLayout();
+	margin-top: 25px;
+	padding: 27px 40px 22px;
+	background-color: $additional-background-color;
+	
+	@include qodefScreenSize680 {
+		padding: 27px 30px 22px;
+	}
+}

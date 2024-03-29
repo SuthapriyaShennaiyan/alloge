@@ -1,0 +1,18 @@
+.qodef-button {
+
+    &.qodef-layout--outlined {
+        @include qodefButtonOutlinedColor();
+    
+        .qodef-m-background-holder {
+            @include qodefButtonBackground();
+        }
+    
+        &:hover {
+            @include qodefButtonOutlinedHoverColor();
+        
+            .qodef-m-background-holder {
+                @include qodefButtonBackgroundHover();
+            }
+        }
+    }
+}

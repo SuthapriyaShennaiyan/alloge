@@ -1,0 +1,139 @@
+/* ==========================================================================
+   9.0 Swiper carousel styles
+   ========================================================================== */
+
+.qodef-swiper-container { // this is the same css style as default swiper-container have
+	position: relative;
+	margin: 0 auto;
+	padding: 0;
+	list-style: none;
+	z-index: 1;
+	visibility: hidden;
+	overflow: hidden;
+	
+	.swiper-slide {
+		overflow: hidden;
+		
+		a, img {
+			width: 100%;
+		}
+	}
+	
+	&.qodef-swiper--initialized {
+		visibility: visible;
+	}
+	
+	.swiper-pagination-bullets {
+		position: relative;
+		bottom: auto;
+		margin-top: 43px;
+		counter-reset: swiper-pagination-number;
+		
+		.swiper-pagination-bullet {
+			position: relative;
+			width: auto;
+			height: auto;
+			padding: 0 7px;
+			color: $heading-color;
+			background-color: transparent;
+			border-radius: 0;
+			opacity: 1;
+			transition: $color-transition;
+			
+			&:before {
+				content: counter(swiper-pagination-number);
+				counter-increment: swiper-pagination-number;
+			}
+			
+			&:hover {
+				color: $main-color;
+			}
+		}
+		
+		.swiper-pagination-bullet-active {
+			color: $main-color;
+		}
+	}
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+	background-image: none !important;
+	width: auto !important;
+	height: auto !important;
+	margin: 0 !important;
+	color: $heading-color;
+	transform: translateY(-50%);
+	
+	svg {
+		display: block;
+		width: 26px;
+		fill: none;
+		stroke: currentColor;
+		stroke-miterlimit: 10;
+		transition: .4s ease-out;
+	}
+	
+	&:after {
+		display: none !important;
+	}
+	
+	&:hover {
+		color: rgba($heading-color , .4);
+	}
+	
+	@include qodefScreenSize680 {
+		display: none;
+	}
+}
+
+.swiper-button-prev {
+	left: 30px !important;
+	
+	@include qodefScreenSize1024 {
+		left: 20px !important;
+	}
+}
+
+.swiper-button-next {
+	right: 30px !important;
+	
+	@include qodefScreenSize1024 {
+		right: 20px !important;
+	}
+}
+
+.swiper-button-prev.swiper-button-outside,
+.swiper-button-next.swiper-button-outside {
+	color: $heading-color;
+	
+	&:hover {
+		color: rgba($heading-color, .4);
+	}
+}
+
+.swiper-button-prev.swiper-button-outside,
+.swiper-container-rtl .swiper-button-next.swiper-button-outside {
+	transform: translateX(-370%);
+	
+	@include qodefScreenSize1440 {
+		transform: translateX(-230%);
+	}
+	
+	@include qodefScreenSize1024 {
+		transform: translateX(-220%);
+	}
+}
+
+.swiper-button-next.swiper-button-outside,
+.swiper-container-rtl .swiper-button-prev.swiper-button-outside {
+	transform: translateX(370%);
+	
+	@include qodefScreenSize1440 {
+		transform: translateX(230%);
+	}
+	
+	@include qodefScreenSize1024 {
+		transform: translateX(220%);
+	}
+}

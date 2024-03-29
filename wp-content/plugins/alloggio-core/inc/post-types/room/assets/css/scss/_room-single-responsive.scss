@@ -1,0 +1,122 @@
+/* ==========================================================================
+   Room Single responsive styles
+   ========================================================================== */
+
+@include qodefScreenSize1024 {
+    
+    .qodef-room {
+    
+        .qodef-m-slider {
+            
+            .swiper-wrapper {
+                align-items: stretch;
+            }
+            
+            .swiper-slide {
+                height: auto;
+                
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    
+        .qodef-e-availability-legend {
+    
+            .qodef-ei-legend-item {
+                width: 50%;
+            }
+        }
+    
+        .qodef-e-location {
+            margin-bottom: 50px;
+        }
+    }
+}
+
+@include qodefScreenSize680 {
+    
+    .qodef-room {
+    
+        .qodef-e-amenity-items {
+    
+            .qodef-e-amenity-item {
+                width: 100%;
+            }
+        }
+    
+        .qodef-e-availability-calendar {
+        
+            .datepick {
+                padding: 29px 25px 25px;
+            }
+        }
+    
+        .qodef-e-availability-legend {
+            padding: 0 25px 25px;
+            
+            .qodef-ei-legend-item {
+                width: 100%;
+            }
+        }
+    
+        .qodef-e-seasonal-items {
+            padding: 0 25px;
+    
+            .qodef-ei {
+                flex-wrap: wrap;
+                flex-direction: column;
+                align-items: flex-start;
+                margin: 30px 0;
+                
+                > * {
+                    flex-shrink: inherit;
+                }
+                
+                &:last-child {
+                    
+                    .qodef-ei-line {
+                        display: none;
+                    }
+                }
+            }
+    
+            .qodef-ei-line {
+                position: absolute;
+                top: auto;
+                left: 0;
+                bottom: -15px;
+                width: 100%;
+                margin: 0;
+            }
+        }
+    }
+    
+    #qodef-room-reservation {
+        padding: 26px 30px 30px;
+    }
+}
+
+@include qodefScreenSize480 {
+    
+    .qodef-room {
+        
+        .qodef-e-seasonal-items {
+            
+            .qodef-ei-date {
+                flex-direction: column;
+                margin-bottom: 5px;
+            }
+    
+            .qodef-ei-date-begin {
+                margin-bottom: 5px;
+                
+                &:after {
+                    display: none;
+                }
+            }
+        }
+    }
+}

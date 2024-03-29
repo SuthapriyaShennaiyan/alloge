@@ -1,0 +1,463 @@
+/* ==========================================================================
+   Widgets styles
+   ========================================================================== */
+
+// $wp-widgets-map input-fields-... variables are for select and for search elements
+
+$wp-widgets-map: (
+    widget-margin: 30,
+    widget-title-margin: 12,
+    widget-title-adjusted-margin: get-text-space(),
+    widget-title-color: null,
+    list-item-bottom-margin: 3,
+    text-size: null,
+    text-color: null,
+    link-color: null,
+    link-hover-color: null,
+    list-link-color: null,
+    list-link-hover-color: null,
+    search-input-color: $heading-color,
+    search-input-border-color: $border-color,
+    search-button-color: $heading-color,
+    search-button-hover-color: $text-color
+);
+
+$wp-widgets-area-map: (
+    '': (),
+    '#qodef-top-area' : (
+        widget-margin: 0,
+        text-size: 15,
+        widget-title-color: $heading-color,
+        text-color: $heading-color
+    ),
+    '#qodef-page-header' : (
+        text-size: 15,
+    ),
+    '#qodef-page-footer': (
+        widget-title-margin: 16,
+    ),
+    '#qodef-page-footer.qodef-footer--light': (
+        widget-title-color: #fff,
+        text-color: #ccc,
+        link-color: #ccc,
+        link-hover-color: #fff,
+        search-input-color: #fff,
+        search-input-border-color: #ccc,
+        search-button-color: #fff,
+        search-button-hover-color: #ccc,
+    ),
+    '.qodef-mega-menu-widget-holder': (
+        widget-title-color: #fff,
+        text-color: #fff,
+        link-color: #fff
+    )
+);
+
+@each $key, $values in $wp-widgets-area-map {
+    $wp-widgets-map-merged: map-merge($wp-widgets-map, $values);
+
+    #{$key} .widget {
+        margin: 0 0 #{map-get($wp-widgets-map-merged, 'widget-margin')}px;
+
+        @if (map-get($wp-widgets-map-merged, 'text-color') != null) {
+            color: map-get($wp-widgets-map-merged, 'text-color');
+        }
+    
+        @if (map-get($wp-widgets-map-merged, 'text-size') != null) {
+            font-size: #{map-get($wp-widgets-map-merged, 'text-size')}px;
+        }
+
+        &:last-child {
+            margin-bottom: 0 !important;
+        }
+
+        .qodef-widget-title {
+            margin: 0 0 #{map-get($wp-widgets-map-merged, 'widget-title-margin')}px;
+
+            @if (map-get($wp-widgets-map-merged, 'widget-title-color') != null) {
+                color: map-get($wp-widgets-map-merged, 'widget-title-color');
+            }
+
+            a {
+                color: inherit;
+
+                &:hover {
+                    color: map-get($wp-widgets-map-merged, 'link-hover-color');
+                }
+            }
+        }
+
+        @if (map-get($wp-widgets-map-merged, 'link-color') != null) {
+            a {
+                color: map-get($wp-widgets-map-merged, 'link-color');
+
+                @if (map-get($wp-widgets-map-merged, 'link-hover-color') != null) {
+                    &:hover {
+                        color: map-get($wp-widgets-map-merged, 'link-hover-color');
+                    }
+                }
+            }
+        }
+
+        ul:not(.qodef-shortcode-list) {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+
+            li {
+                margin: 0 0 #{map-get($wp-widgets-map-merged, 'list-item-bottom-margin')}px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                @if (map-get($wp-widgets-map-merged, 'list-link-color') != null) {
+                    a {
+                        color: map-get($wp-widgets-map-merged, 'list-link-color');
+
+                        @if (map-get($wp-widgets-map-merged, 'list-link-hover-color') != null) {
+                            &:hover {
+                                color: map-get($wp-widgets-map-merged, 'list-link-hover-color');
+                            }
+                        }
+                    }
+                }
+
+                ul {
+                    margin-top: #{map-get($wp-widgets-map-merged, 'list-item-bottom-margin')}px;
+                    margin-left: 1em;
+                    
+                    @include qodefScreenSize680 {
+                        margin-left: 3%;
+                    }
+                }
+            }
+        }
+
+        &.widget_archive,
+        &.widget_categories,
+        &.widget_text {
+
+            select {
+                width: 100%;
+                max-width: 100%;
+                margin: #{map-get($wp-widgets-map-merged, 'widget-title-adjusted-margin')} 0 0;
+            }
+
+            .select2 {
+                margin-bottom: 0;
+            }
+        }
+
+        &.widget_calendar {
+            width: 100%;
+
+            table {
+                table-layout: fixed;
+                
+                td, th {
+                    padding: 5px 3px;
+                }
+            }
+
+            #today {
+                color: #fff;
+                background-color: $main-color;
+
+                a {
+                    color: inherit;
+                }
+            }
+
+            tfoot {
+                
+                tr,
+                td {
+                    border: 0;
+                }
+
+                @if (map-get($wp-widgets-map-merged, 'link-color') != null) {
+                    a {
+                        color: map-get($wp-widgets-map-merged, 'link-color');
+
+                        &:hover {
+                            color: map-get($wp-widgets-map-merged, 'link-hover-color');
+                        }
+                    }
+                }
+            }
+        }
+
+        &.widget_text {
+
+            img {
+                display: block;
+                
+                &.alignnone {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        &.widget_rss {
+
+            ul {
+
+                li {
+                    margin-bottom: 25px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+
+                .rsswidget {
+                    display: block;
+                    @include qodefHeadingStyle(h5, false);
+                }
+
+                .rssSummary {
+                    margin-top: 5px;
+                }
+
+                cite {
+                    display: block;
+                    margin-top: 5px;
+                }
+            }
+        }
+
+        &.widget_search {
+
+            .qodef-widget-title {
+                margin-bottom: #{map-get($wp-widgets-map-merged, 'widget-title-margin') - map-get($wp-widgets-map-merged, 'widget-title-adjusted-margin')};
+            }
+
+            .qodef-search-form-inner,
+            .input-holder {
+                @include qodefRelativeLayout();
+            }
+    
+            input {
+                padding: 8px 40px 1px 3px;
+                margin: 0;
+                border: 0;
+                border-bottom: 1px solid map-get($wp-widgets-map-merged, 'search-input-border-color');
+        
+                &:focus {
+                    color: map-get($wp-widgets-map-merged, 'search-input-color');
+                    background-color: transparent;
+                }
+            }
+
+            button {
+                @include qodefButtonSearchIconStyle(map-get($wp-widgets-map-merged, 'search-button-color'), map-get($wp-widgets-map-merged, 'search-button-hover-color'));
+                padding-bottom: 8px;
+            }
+        }
+
+        &.widget_tag_cloud {
+
+            .tagcloud {
+
+                a {
+                    position: relative;
+                    display: inline-block;
+                    vertical-align: top;
+                    margin: 0 8px 11px 0;
+                    font-family: inherit;
+                    font-size: 17px !important;
+                    line-height: inherit;
+                    font-weight: inherit;
+                    letter-spacing: inherit;
+                    text-transform: capitalize;
+                    color: map-get($wp-widgets-map-merged, 'link-color');
+
+                    &:hover {
+                        color: map-get($wp-widgets-map-merged, 'link-hover-color');
+                    }
+                }
+            }
+        }
+        
+        &.widget_alloggio_core_blog_list {
+    
+            .qodef-widget-title {
+                margin: 0 0 17px;
+            }
+        }
+
+        &.widget_media_image {
+            margin-bottom: 0;
+
+            .qodef-widget-title {
+                margin-bottom: #{map-get($wp-widgets-map-merged, 'widget-title-margin') + map-get($wp-widgets-map-merged, 'widget-title-adjusted-margin')};
+            }
+
+            a {
+                display: inline-block;
+                vertical-align: top;
+            }
+            
+            img {
+                display: block;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   Search appearance tweak begin
+   ========================================================================== */
+
+// WEBKIT
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+}
+
+// IE
+input[type="search"]::-ms-clear {
+    display: none;
+}
+
+input[type=text]::-ms-clear {
+    display: none;
+}
+
+
+//Block widget
+$slider-handle-size: 12px;
+$slider-rail-height: 6px;
+$slider-bottom-margin: 38px;
+
+@mixin qodefWooSliderHandle() {
+    background-image: none;
+    border-radius: 100%;
+    border: 1px solid #000;
+    background-color: #fff;
+    height: $slider-handle-size;
+    margin: 0;
+    outline: none;
+    position: relative;
+    top: -#{($slider-handle-size - $slider-rail-height) / 2};
+    width: $slider-handle-size;
+    
+    &:hover {
+        @include qodefWooSliderHandleFocus();
+    }
+}
+@mixin qodefWooSliderHandleFocus() {
+
+}
+.wp-block-woocommerce-filter-wrapper {
+    .wc-block-price-slider {
+        margin: 20px 0 0;
+    }
+    
+    .wc-blocks-filter-wrapper {
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+        }
+    }
+    
+    .wc-block-components-price-slider__range-input-wrapper {
+        box-shadow: none;
+        height: $slider-rail-height;
+        margin: calc((#{$slider-handle-size} / 2)) 0;
+        width: 100%;
+        
+        &:before {
+            background: #fff;
+            border: 1px solid $heading-color;
+            opacity: 1;
+        }
+    }
+    
+    .wc-block-components-price-slider__range-input-progress {
+        height: $slider-rail-height;
+        color: $heading-color;
+    }
+    
+    // can’t comma-separate these type of selectors
+    .wc-block-components-price-slider__range-input {
+        
+        &::-webkit-slider-thumb {
+            @include qodefWooSliderHandle();
+        }
+        
+        &::-moz-range-thumb {
+            @include qodefWooSliderHandle();
+        }
+        
+        &::-ms-thumb {
+            @include qodefWooSliderHandle();
+        }
+        
+        &:focus {
+            
+            &::-webkit-slider-thumb {
+                @include qodefWooSliderHandleFocus();
+            }
+            
+            &::-moz-range-thumb {
+                @include qodefWooSliderHandleFocus();
+            }
+            
+            &::-ms-thumb {
+                @include qodefWooSliderHandleFocus();
+            }
+        }
+    }
+    
+    .wc-block-components-price-slider__controls,
+    .wc-block-components-price-slider__range-text {
+        margin: $slider-bottom-margin 0 0 0;
+        justify-content: flex-start;
+        
+        
+        input {
+            margin: 0;
+        }
+        
+        span {
+            font-size: 17px;
+            color: $heading-color;
+            
+            &:first-child {
+                
+                &:after {
+                    content: '—';
+                    margin: 0 4px;
+                }
+            }
+        }
+    }
+    
+    .wc-block-components-price-slider__actions {
+        display: flex;
+        justify-content: space-between;
+        margin: $slider-bottom-margin 0 0 0;
+        
+        button,
+        button[type=submit]:not(.wp-block-search__button).wc-block-components-filter-submit-button {
+            @include qodefButtonDefaultStyle();
+            @include qodefButtonOutlinedColor();
+            font-size: 11px;
+            padding: 7px 36px;
+            text-decoration: none;
+            
+            &:hover {
+                @include qodefButtonOutlinedHoverColor();
+                background-color: $heading-color;
+            }
+        }
+        
+        button[type=submit]:not(.wp-block-search__button).wc-block-components-filter-submit-button {
+            margin-left: auto;
+        }
+    }
+}

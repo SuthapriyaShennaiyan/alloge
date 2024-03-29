@@ -1,0 +1,36 @@
+/* ==========================================================================
+   Room Reservation Filter shortcode variation styles
+   ========================================================================== */
+
+.qodef-room-reservation-filter {
+	
+	&.qodef-layout--horizontal {
+		padding: 24px 24px 28px 24px;
+		background-color: $additional-background-color;
+	
+		.qodef-m-form {
+			position: relative;
+			display: flex;
+			align-items: flex-end;
+			margin: 0 -12px;
+			
+			.qodef-m-field {
+				padding: 0 12px;
+				
+				&.qodef--guests {
+					
+					.qodef-m-field-persons {
+						left: 12px;
+						width: calc(100% - 24px);
+					}
+				}
+			}
+		}
+		
+		.qodef-m-spinner {
+			top: calc(50% - 20px);
+			left: calc(50% - 20px);
+			width: 40px;
+		}
+	}
+}

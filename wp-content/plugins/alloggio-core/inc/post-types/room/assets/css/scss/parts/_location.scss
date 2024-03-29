@@ -1,0 +1,14 @@
+/* ==========================================================================
+   Room Single part styles
+   ========================================================================== */
+
+.qodef-e-location {
+	@include qodefRelativeLayout();
+	margin-top: 51px;
+	padding-top: 37px;
+	border-top: 1px solid $additional-border-color;
+}
+
+.qodef-e-location-title {
+	margin: 0 0 23px;
+}

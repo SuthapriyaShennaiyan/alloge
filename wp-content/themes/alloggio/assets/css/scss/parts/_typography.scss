@@ -1,0 +1,53 @@
+/* ==========================================================================
+   5.0 Typography styles
+   ========================================================================== */
+
+body {
+    @include qodefParagraphStyle();
+    background-color: $background-color;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+@for $i from 1 to 7 {
+
+    h#{$i},
+    .qodef-h#{$i} {
+        @include qodefHeadingStyle(#{h#{$i}}, true, true);
+        margin: 25px 0;
+        -ms-word-wrap: break-word;
+        word-wrap: break-word;
+    }
+}
+
+a,
+p a {
+    @include qodefLinkStyle();
+}
+
+p {
+    margin: 10px 0;
+    line-height: $text-line-height-em;
+}
+
+blockquote {
+    @include qodefRelativeLayout();
+    margin: 10px 0;
+    padding: 0;
+    @include qodefBlockquoteStyle();
+    quotes: none;
+
+    > * {
+        @include qodefTypographyLayout();
+        margin: 0;
+    }
+
+    &:after {
+        content: '';
+    }
+
+    cite {
+        font-style: normal;
+        font-weight: 400;
+    }
+}

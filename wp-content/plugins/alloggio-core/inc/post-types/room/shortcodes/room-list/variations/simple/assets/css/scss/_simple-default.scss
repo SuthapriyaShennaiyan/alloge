@@ -1,0 +1,27 @@
+/* ==========================================================================
+   Room list shortcode variation styles
+   ========================================================================== */
+
+.qodef-room-list {
+	
+	&.qodef-layout--simple {
+		
+		.qodef-e-media-image,
+		.qodef-e-media-slider {
+			margin-bottom: 20px;
+		}
+		
+		.qodef-e-content {
+			margin-bottom: 22px;
+		}
+		
+		.qodef-e-info-items {
+			margin-top: 0;
+			color: $main-color;
+		}
+		
+		.qodef-e-excerpt {
+			margin-top: 13px;
+		}
+	}
+}

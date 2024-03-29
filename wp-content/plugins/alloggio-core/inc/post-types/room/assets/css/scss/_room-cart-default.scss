@@ -1,0 +1,53 @@
+/* ==========================================================================
+   Room Cart styles
+   ========================================================================== */
+
+.woocommerce-page {
+    
+    div.woocommerce {
+    
+        .shop_table {
+            
+            tr {
+                
+                &.qodef-product-type-room {
+                    
+                    .qodef-quantity-buttons {
+                     
+                        span {
+                            display: none !important;
+                        }
+                        
+                        .qodef-quantity-input {
+                            margin: 0 !important;
+                            cursor: none;
+                            pointer-events: none;
+                        }
+                    }
+                }
+            }
+        }
+    
+        .qodef-reservation-info {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            
+            .qodef-m-info {
+                display: inline-flex;
+                align-items: center;
+                width: 100%;
+                line-height: 1.4em;
+            }
+    
+            .qodef-m-info-label {
+                margin-right: 5px;
+                color: $heading-color;
+                
+                .qodef--mark {
+                    margin: 0 2px;
+                }
+            }
+        }
+    }
+}

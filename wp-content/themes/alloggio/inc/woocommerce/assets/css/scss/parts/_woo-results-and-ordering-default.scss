@@ -1,0 +1,23 @@
+/* ==========================================================================
+   WooCommerce results and ordering styles
+   ========================================================================== */
+
+.qodef-woo-results {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 24px;
+	
+	.woocommerce-ordering {
+		margin-left: auto;
+		
+		select {
+			@include qodefWooSelect2Style();
+		}
+		
+		.select2-container--default {
+			margin: 0;
+		}
+	}
+}

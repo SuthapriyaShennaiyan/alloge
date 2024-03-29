@@ -1,0 +1,42 @@
+/* ==========================================================================
+   Room Cart styles
+   ========================================================================== */
+
+.woocommerce-page {
+    
+    div.woocommerce {
+    
+        .qodef-reservation-info {
+    
+            @include qodefScreenSize1024 {
+    
+                .qodef-m-info {
+                    flex-wrap: wrap;
+        
+                    > * {
+                        width: 100%;
+                    }
+                }
+    
+                .qodef-m-info-value {
+                    display: flex;
+                    flex-direction: column;
+    
+                    .qodef--mark {
+                        display: none;
+                    }
+                }
+            }
+        }
+        
+        .woocommerce-cart-form {
+    
+            .qodef-reservation-info {
+    
+                @include qodefScreenSize480 {
+                    display: none;
+                }
+            }
+        }
+    }
+}

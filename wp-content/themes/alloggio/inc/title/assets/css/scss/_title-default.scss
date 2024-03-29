@@ -1,0 +1,25 @@
+/* ==========================================================================
+   Title styles
+   ========================================================================== */
+
+.qodef-page-title {
+	@include qodefRelativeLayout();
+	height: 260px;
+	background-color: $additional-background-color;
+	
+	.qodef-m-inner {
+		@include qodefRelativeLayout();
+		height: 100%;
+	}
+	
+	.qodef-m-content {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	
+	.qodef-m-title {
+		margin: 0;
+	}
+}

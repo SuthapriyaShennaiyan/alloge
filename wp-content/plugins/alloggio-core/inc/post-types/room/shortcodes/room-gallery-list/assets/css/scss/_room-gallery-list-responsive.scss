@@ -1,0 +1,52 @@
+/* ==========================================================================
+   Room Gallery list shortcode responsive styles
+   ========================================================================== */
+
+.qodef-room-gallery-list {
+	
+	@include qodefScreenSize1024 {
+		
+		.qodef-e-content {
+			padding: 94px 45px 100px;
+		}
+	}
+	
+	@include qodefScreenSize768 {
+		
+		.qodef-room-gallery-list-item {
+			
+			&:nth-child(odd) {
+				
+				.qodef-e-inner {
+					flex-direction: column;
+				}
+				
+				.qodef-e-content {
+					text-align: inherit;
+				}
+			}
+		}
+		
+		.qodef-e-inner {
+			flex-direction: column;
+			
+			> * {
+				width: 100%;
+			}
+		}
+		
+		.qodef-e-media {
+			
+			> * {
+				height: auto;
+			}
+		}
+	}
+	
+	@include qodefScreenSize680 {
+		
+		.qodef-e-content {
+			padding: 44px 28px 50px;
+		}
+	}
+}

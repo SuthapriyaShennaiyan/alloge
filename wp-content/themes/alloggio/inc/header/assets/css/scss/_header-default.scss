@@ -1,0 +1,37 @@
+/* ==========================================================================
+   Header styles
+   ========================================================================== */
+$header-height: 95px;
+
+#qodef-page-header {
+	@include qodefRelativeLayout();
+	height: $header-height;
+	background-color: #fff;
+	z-index: 100; // to be on top of content, if content has negative margin
+	
+	.qodef-header-logo-link {
+		position: relative;
+		display: flex;
+		align-items: center;
+		flex-shrink: 0;
+		height: 36px;
+		max-height: 100%;
+		
+		img {
+			display: block;
+			margin: auto 0;
+			width: auto;
+			max-height: 100%;
+			transition: opacity 0.3s ease;
+		}
+	}
+}
+
+#qodef-page-header-inner {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 100%;
+	padding: $full-width-side-padding;
+}

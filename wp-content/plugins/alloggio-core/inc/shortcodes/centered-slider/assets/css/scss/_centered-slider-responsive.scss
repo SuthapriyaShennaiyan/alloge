@@ -1,0 +1,42 @@
+/* ==========================================================================
+   Centered Slider shortcode responsive style - begin
+   ========================================================================== */
+
+.qodef-centered-slider {
+	
+	@include qodefScreenSize768 {
+		
+		.qodef-m-item {
+			width: 100%;
+			margin: 0 !important;
+		}
+		
+		&.qodef--has-title {
+			
+			&:after,
+			.swiper-navigation {
+				width: 84%;
+				left: 8%;
+			}
+		}
+	}
+	
+	@include qodefScreenSize680 {
+		
+		.qodef-m-title {
+			font-size: 24px;
+		}
+		
+		.qodef-m-subtitle {
+			display: none;
+		}
+		
+		.swiper-navigation {
+			display: none;
+		}
+	}
+}
+
+/* ==========================================================================
+   Centered Slider shortcode responsive style - end
+   ========================================================================== */

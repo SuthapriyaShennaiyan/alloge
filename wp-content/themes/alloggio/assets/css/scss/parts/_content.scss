@@ -1,0 +1,51 @@
+/* ==========================================================================
+   8.0 Content styles
+   ========================================================================== */
+
+#qodef-page-wrapper {
+	position: relative;
+	overflow: hidden; // hidden is important in order to prevent content dragging and double scroll bar when content is wider then screen
+}
+
+#qodef-page-outer {
+	position: relative;
+}
+
+#qodef-page-inner {
+	position: relative;
+	padding: $page-content-padding;
+}
+
+#qodef-page-content {
+	
+	&.qodef-layout--template {
+		
+		.qodef-page-content-section {
+			
+			&.qodef-col--12 {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.qodef--boxed {
+	background-color: $additional-background-color;
+	
+	#qodef-page-wrapper {
+		display: block;
+		background-color: $background-color;
+	}
+	
+	#qodef-page-inner {
+		padding-left: $boxed-grid-padding-size;
+		padding-right: $boxed-grid-padding-size;
+	}
+}
+
+.qodef--passepartout {
+	
+	#qodef-page-wrapper {
+		background-color: $background-color;
+	}
+}

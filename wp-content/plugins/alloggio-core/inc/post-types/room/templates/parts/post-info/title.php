@@ -1,0 +1,1 @@
+<h2 class="qodef-e-title"><?php the_title(); ?></h2>

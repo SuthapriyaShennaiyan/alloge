@@ -1,0 +1,67 @@
+/* ==========================================================================
+   Info Card shortcode styles
+   ========================================================================== */
+
+.qodef-info-card {
+	position: relative;
+	display: flex;
+	align-items: center;
+	
+	.qodef-m-image {
+		flex-shrink: 0;
+		clip-path: inset(10% 0 10% 0);//in order to hide parallax image edges
+		
+		a, img {
+			display: block;
+		}
+	}
+	
+	.qodef-m-content {
+		@include qodefRelativeLayout();
+		padding: 100px 205px 100px 105px;
+		background-color: $additional-background-color;
+		z-index: 1;
+	}
+	
+	.qodef-m-title {
+		margin: 0;
+	}
+	
+	.qodef-m-subtitle {
+		margin: 24px 0 0;
+	}
+	
+	span.qodef-m-subtitle {
+		display: block;
+		font-size: 21px;
+		line-height: 1.666666666666667em;
+	}
+	
+	.qodef-m-text {
+		margin: 22px 0 0;
+	}
+	
+	.qodef-m-button {
+		margin: 43px 0 0;
+	}
+	
+	.qodef-m-content-image {
+		position: absolute;
+		left: 88px;
+		bottom: -60px;
+		z-index: -1;
+		
+		img {
+			display: block;
+		}
+	}
+	
+	&.qodef-image--right {
+		flex-direction: row-reverse;
+		
+		.qodef-m-content-image {
+			left: auto;
+			right: 88px;
+		}
+	}
+}

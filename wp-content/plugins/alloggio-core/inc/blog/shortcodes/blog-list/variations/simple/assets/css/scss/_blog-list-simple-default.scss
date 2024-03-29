@@ -1,0 +1,45 @@
+/* ==========================================================================
+   Blog List Simple styles
+   ========================================================================== */
+
+.qodef-blog {
+	
+	&.qodef-item-layout--simple {
+		
+		.qodef-blog-item {
+			
+			.qodef-e-title {
+				margin: 0;
+			}
+			
+			.qodef-e-inner {
+				display: flex;
+				align-items: flex-start;
+			}
+			
+			.qodef-e-media-image {
+				flex-shrink: 0;
+				width: 120px;
+				margin: 0 20px 0 0;
+			}
+			
+			.qodef-e-info {
+				
+				&.qodef-info--bottom {
+					margin-top: 3px;
+				}
+			}
+			
+			.qodef-e-info-date {
+				color: $main-color;
+				
+				a {
+					
+					&:hover {
+						color: $heading-color;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,126 @@
+/* ==========================================================================
+   Login opener global styles
+   ========================================================================== */
+
+#qodef-page-header .widget.widget_alloggio_membership_login_opener {
+	height: 100%;
+	
+	.page-template-user-dashboard:not(.logged-in) & {
+		display: none;
+	}
+}
+
+.qodef-login-opener-widget {
+	position: relative;
+	display: flex;
+	align-items: center;
+	height: 100%;
+	margin: 0;
+	
+	.qodef-login-opener {
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		@include qodefCustomTextStyle(null);
+		
+		.qodef-login-opener-icon {
+			display: block;
+			width: 14px;
+			margin-right: 6px;
+			flex-shrink: 0;
+			
+			svg {
+				display: block;
+				max-width: 100%;
+				height: auto;
+				stroke: currentColor;
+				fill: none;
+				stroke-miterlimit: 10;
+				stroke-width: 1;
+			}
+			
+			.qodef-login-opener-text {
+				padding-top: 1px;
+			}
+		}
+	}
+	
+	.qodef-logged-in-user {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		height: 100%;
+		cursor: pointer;
+		
+		.qodef-m-user {
+			position: relative;
+			display: flex;
+			align-items: center;
+			height: 100%;
+			@include qodefCustomTextStyle();
+			
+			.qodef-header--light:not(.qodef-header--sticky-display) & {
+				color: #fff;
+			}
+			
+			.qodef-header--dark:not(.qodef-header--sticky-display) & {
+				color: #000;
+			}
+		}
+		
+		.qodef-m-user-image {
+			flex-shrink: 0;
+			margin-right: 8px;
+		}
+		
+		.qodef-m-user-name {
+			margin-top: 3px;
+		}
+		
+		.qodef-m-navigation-items {
+			position: absolute;
+			top: 100%;
+			left: -30px;
+			width: 200px;
+			margin: 0;
+			padding: 19px 0 !important;
+			background-color: #faf9f5;
+			visibility: hidden;
+			opacity: 0;
+			transition: $opacity-transition;
+		}
+		
+		.qodef-m-navigation-item {
+			margin: 3px 0 !important;
+			padding: 0 30px;
+			line-height: 1.58824em;
+			
+			.qodef-e-link {
+				position: relative;
+				display: flex;
+				align-items: flex-start;
+				@include qodefMenuLevelTwoInitialTypographyStyle();
+			}
+			
+			.qodef-e-icon {
+				flex-shrink: 0;
+				margin-right: 5px;
+			}
+			
+			&.qodef--active {
+				
+				.qodef-e-link {
+					@include qodefMenuLevelTwoHoverStyle();
+				}
+			}
+		}
+		
+		&:hover {
+			
+			.qodef-m-navigation-items {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+}

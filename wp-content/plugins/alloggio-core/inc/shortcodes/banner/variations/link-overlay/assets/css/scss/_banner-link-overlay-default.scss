@@ -1,0 +1,100 @@
+.qodef-banner {
+	
+	&.qodef-layout--link-overlay {
+		
+		.qodef-m-content {
+			left: -20px;
+		}
+		
+		.qodef-m-content {
+			
+			@include qodefScreenSize680 {
+				position: relative;
+			}
+		}
+		
+		.qodef-m-content-inner {
+			width: auto;
+			max-width: 90%;
+			padding: 31px 61px 42px 37px;
+			position: relative;
+			z-index: 1;
+			cursor: default;
+			
+			.qodef-m-content-inner-background {
+				background-color: $additional-background-color;
+				@include  qodefAbsoluteLayout();
+				z-index: -1;
+				transform: scaleX(1.02);
+				transform-origin: left;
+				transition: .37s $custom-transition-timing;
+				backface-visibility: hidden;
+			}
+			
+			.qodef-m-content-inner-holder {
+				position: relative;
+				z-index: 2;
+				transform: translateX(0px) translateZ(0px);
+				transition: .37s $custom-transition-timing;
+			}
+			
+			&:hover {
+				.qodef-m-content-inner-background {
+					transform: scaleX(1.03);
+				}
+				
+				.qodef-m-content-inner-holder {
+					transform: translateX(10px) translateZ(0px);
+				}
+			}
+			
+			
+			@include qodefScreenSize680 {
+				width: 100%;
+				max-width: 100%;
+				padding: 21px 30px 28px 30px !important;
+			}
+		}
+		
+		.qodef-m-title {
+			position: relative;
+			left: -2px;
+		}
+		
+		.qodef-m-button {
+			@include qodefScreenSize680 {
+				display: none;
+			}
+		}
+		
+		&.qodef--has-text {
+			
+			.qodef-m-content-inner {
+				max-width: 40%;
+				
+				@include qodefScreenSize1024 {
+					max-width: 49%;
+				}
+				
+				@include qodefScreenSize768 {
+					max-width: 55%;
+				}
+				
+				@include qodefScreenSize680 {
+					max-width: 100%;
+					
+					> .qodef-m-text {
+						display: none;
+					}
+				}
+			}
+		}
+		
+		&.qodef--has-button {
+			
+			.qodef-m-content {
+				left: 0;
+			}
+		}
+	}
+}

@@ -1,0 +1,1 @@
+<span class="qodef-m-weather-icon qodef--<?php echo esc_attr( $today_description_class ); ?>"></span>

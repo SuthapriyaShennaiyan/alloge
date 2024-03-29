@@ -1,0 +1,20 @@
+/* ==========================================================================
+   Room list shortcode variation styles
+   ========================================================================== */
+.qodef-room-list {
+	
+	&.qodef-layout--gallery {
+		
+		@include qodefScreenSize680 {
+			
+			.qodef-e-content {
+				padding: 10px 30px 21px;
+			}
+			
+			.qodef-e-info-items,
+			.qodef-e-excerpt {
+				display: none;
+			}
+		}
+	}
+}
